@@ -20,7 +20,7 @@ $customDbConfig = array(
 	),
 	'DEV' => array(
 		'server' 	=> 'db146794.mysql.sysedata.no',
-		'port' 		=> '8889',
+		//'port' 		=> '8889',
 		//'port' => '3306',
 		'user' 		=> 'db146794',
 		'password' 	=> 'cbb27e7d',
