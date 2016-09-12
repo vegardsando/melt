@@ -1,0 +1,49 @@
+// Mustasj fixes
+*, *:before, *:after {
+    box-sizing: border-box;
+ }
+
+a {
+    color: inherit;
+    outline: 0;
+	text-decoration: none;
+}
+
+html,button,input,select,textarea {
+    border-radius: 0;
+    -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	outline:none;
+	text-rendering: optimizeLegibility;
+}
+
+html{
+	position: relative; // IE 11 fix
+    transition: opacity .3s ease;
+
+    &.lastet{
+        opacity: 1;
+    }
+}
+
+ul.unstyled {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+img { max-width: 100%; }
+
+@keyframes errorNo {
+    0%, 100% {transform: rotate(-20deg);}
+    50% {transform: rotate(20deg);}
+}
+
+.error-icon {
+	animation: errorNo 2.5s infinite;
+	display: inline-block;
+	transform-origin: 50% 80%;
+
+	&.delay { animation-delay: .3s;}
+}
+// End Mustasj fixes

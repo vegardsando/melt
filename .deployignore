@@ -1,0 +1,15 @@
+craft/storage/runtime/**
+db/**
+.vagrant/**
+*/dynamic/**
+*/static/**
+gulpfile.js
+package.json
+.gitignore
+.jshintrc
+.project-tile.png
+.scss-lint.yml
+README.md
+.gitattributes
+forge_include.conf
+syncCraft.sh

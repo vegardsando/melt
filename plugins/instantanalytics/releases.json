@@ -1,0 +1,42 @@
+[
+    {
+        "version": "1.0.3",
+        "downloadUrl": "https://github.com/nystudio107/instantanalytics/archive/master.zip",
+        "date": "2016-06-19T17:29:17.496Z",
+        "notes": [
+            "[Added] Added a bot UserAgent filter list (on by default), configurable via filterBotUserAgents in config.php",
+            "[Added] Added groupExcludes setting in config.php that has an array of Craft user group handles for Analytics data exclusion",
+            "[Added] Added serverExcludes setting in config.php that has arrays of $_SERVER[] superglobal RegEx tests for Analytics data exclusion",
+            "[Improved] The various _shouldSendAnalytics() tests now short-circuit, returning as soon as a false condition is met",
+            "[Improved] Updated README.md"
+        ]
+    },
+    {
+        "version": "1.0.2",
+        "downloadUrl": "https://github.com/nystudio107/instantanalytics/archive/master.zip",
+        "date": "2016-06-16T17:29:17.496Z",
+        "notes": [
+            "[Fixed] The UserAgent is now set to the client UserAgent by default",
+            "[Improved] Added a sendAnalyticsData setting to config.php",
+            "[Improved] Updated README.md"
+        ]
+    },
+    {
+        "version": "1.0.1",
+        "downloadUrl": "https://github.com/nystudio107/instantanalytics/archive/master.zip",
+        "date": "2016-06-14T17:29:17.496Z",
+        "notes": [
+            "[Added] Updated to a newer version of the GAMP lib for PHP, which uses Guzzle 6.x",
+            "[Fixed] No more Composer dependency conflicts with the Oauth 2.0 plugin",
+            "[Improved] Updated README.md"
+        ]
+    },
+    {
+        "version": "1.0.0",
+        "downloadUrl": "https://github.com/nystudio107/instantanalytics/archive/master.zip",
+        "date": "2016-06-13T17:29:17.496Z",
+        "notes": [
+            "[Added] Initial release"
+        ]
+    }
+]

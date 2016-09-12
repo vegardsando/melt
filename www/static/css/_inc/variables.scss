@@ -1,0 +1,7 @@
+$desktop: "only screen and (min-width: 1025px)";
+$tablet:  "only screen and (min-width: 600px)";
+$phone:   "only screen and (max-width: 599px)";
+
+$ease: cubic-bezier(.4, 0, .2, 1);
+$ease-out: cubic-bezier(0, 0, .2, 1);
+$ease-in: cubic-bezier(.4, 0, 1, 1);
