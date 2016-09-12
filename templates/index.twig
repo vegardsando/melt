@@ -2,5 +2,14 @@
 {% set bodyClass = "index" %}
 
 {% block content %}
-	<h1 style="text-align: center; padding-top: 45vh;">Velkommen til {{siteName}}</h1>
+
+
+	<section>
+		<div id="logo">
+			{{ craft.inlin.er('/static/svg/symbols/logo_sandwichbar.svg') | raw }}
+		</div>
+
+		<h2>Åpner på Sirkus shopping 1.Oktober!</h2>
+		<img src="/static/img/meltbil_meny.jpg">		
+	</section>
 {% endblock %}

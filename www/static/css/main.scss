@@ -1,3 +1,21 @@
 @import "_inc/mixins";
 @import "_inc/variables";
 @import "_inc/boilerplate";
+
+.index {
+
+  text-align: center;
+
+  #logo {
+    text-align: center;
+    margin-top: 90px;
+    margin-bottom: 20px;
+
+    svg {
+      display: inline-block;
+      width: 420px;
+      height: 230px;
+    }
+  }
+
+}
