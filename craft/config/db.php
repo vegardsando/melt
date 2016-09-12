@@ -33,10 +33,10 @@ $customDbConfig = array(
 		'database' 	=> ''
 	),
 	'PROD' => array(
-		'server' 	=> '',
-		'user' 		=> '',
-		'password' 	=> '',
-		'database' 	=> ''
+		'server' 	=> 'db146794.mysql.sysedata.no',
+		'user' 		=> 'db146794',
+		'password' 	=> 'cbb27e7d',
+		'database' 	=> 'db146794'
 	)
 );
 
