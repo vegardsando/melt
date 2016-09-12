@@ -19,12 +19,12 @@ $customDbConfig = array(
 		'database' 	=> 'melt_craft'
 	),
 	'DEV' => array(
-		'server' 	=> '10.0.0.14',
+		'server' 	=> 'db146794.mysql.sysedata.no',
 		'port' 		=> '8889',
 		//'port' => '3306',
-		'user' 		=> 'root',
-		'password' 	=> 'root',
-		'database' 	=> '_standard_craft'
+		'user' 		=> 'db146794',
+		'password' 	=> 'cbb27e7d',
+		'database' 	=> 'db146794'
 	),
 	'STAGE' => array(
 		'server' 	=> '',
