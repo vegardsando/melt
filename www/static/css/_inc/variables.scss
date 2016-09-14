@@ -20,8 +20,8 @@ $ease-in: cubic-bezier(.4, 0, 1, 1);
 /* COLOR PALETTE */
 /*-------------*/
 
-$color_pr1: #0f0f0f; // Blå
-$color_pr2: #141414; // Mørk grå
+$color_pr1: #0f0f0f; // Svart
+$color_pr2: #FFFFFF; // Hvit
 $color_pr3: #ebebeb; // Lys grå
 $color_sec1: #f1372a; // Lysegul
 
@@ -129,7 +129,7 @@ b, strong {
     color: white; }
 
 /* LINK COLORS */
-a {color: $color_sec1; text-decoration: none}
+a {color: $color_pr2; text-decoration: none}
 a:hover { text-decoration: underline; }
 
 //$cubicbezier: ease;
