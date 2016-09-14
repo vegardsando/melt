@@ -29,19 +29,29 @@
 
   h2 {
     text-transform: uppercase;
-    letter-spacing: 20px;
+    letter-spacing: 10px;
     font-size: 4vw;
     margin-bottom: 4em;
 
     @media #{$desktop} {
   		font-size: 50px;
+      letter-spacing: 20px;
   	}
 
-    a {
-      letter-spacing: 2px;
-      font-size: 10px;
-    }
+  }
 
+  a {
+    letter-spacing: 2px;
+    font-size: 10px;
+
+    @media #{$tablet} {
+  		font-size: 12px;
+  	}
+
+    @media #{$desktop} {
+  		font-size: 14px;
+      letter-spacing: 3px;
+  	}
   }
 
 }
