@@ -1,7 +1,7 @@
 {% set midnight = now|date_modify("+1 day")|date("Y-m-d") ~ ' 00:00' %}
 {% set cdnUrl = craft.config.cdnUrl is defined ? craft.config.cdnUrl : siteUrl %}
 <!doctype html>
-{% if craft.config.env == 'PROD' %}{% include '_admin/_mustasj_logo' %}{% endif %}
+{% if craft.config.env == 'PROD' %}{% include '_admin/_melt_logo' %}{% endif %}
 <html class="no-js" lang="{{craft.locale}}">
 	<head>
 		<meta charset="utf-8">
