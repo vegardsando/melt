@@ -42,13 +42,13 @@ $h7: 10px;
 
 /* FONTS FACE VARIABLES */
 /**************************/
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,800);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 // @font-face {font-family: 'AlrightSans';src: url('/dist/fonts/AlrightSans-Bold-v3.eot');src: url('/dist/fonts/AlrightSans-Bold-v3.eot?#iefix') format('embedded-opentype'),url('/dist/fonts/AlrightSans-Bold-v3.woff2') format('woff2'),url('/dist/fonts/AlrightSans-Bold-v3.woff') format('woff'),url('/dist/fonts/AlrightSans-Bold-v3.ttf') format('truetype'),url('/dist/fonts/AlrightSans-Bold-v3.svg#wf') format('svg');}
 //
 // @font-face {font-family: 'AlrightSans';src: url('/dist/fonts/AlrightSans-Regular-v3.eot');src: url('/dist/fonts/AlrightSans-Regular-v3.eot?#iefix') format('embedded-opentype'),url('/dist/fonts/AlrightSans-Regular-v3.woff2') format('woff2'),url('/dist/fonts/AlrightSans-Regular-v3.woff') format('woff'),url('/dist/fonts/AlrightSans-Regular-v3.ttf') format('truetype'),url('/dist/fonts/AlrightSans-Regular-v3.svg#wf') format('svg');}
 
-$font_default: 'Open Sans', sans-serif;
+$font_default: 'Montserrat', sans-serif;
 
 
 /* DEFAULT FONT LOOKS AND BEHAVIOUR - MEDIA QUERIES - MOBILE FIRST */

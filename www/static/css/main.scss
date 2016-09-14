@@ -8,14 +8,21 @@
 
   #logo {
     text-align: center;
-    margin-top: 90px;
-    margin-bottom: 20px;
+    margin-top: 15%;
+    margin-bottom: 13%;
 
     svg {
       display: inline-block;
-      width: 420px;
-      height: 230px;
+      width: 50%;
+      max-height: 230px;
     }
+  }
+
+  h2 {
+    text-transform: uppercase;
+    letter-spacing: 20px;
+    font-size: 50px;
+    font-size: 4vw;
   }
 
 }
