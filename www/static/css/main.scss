@@ -31,11 +31,16 @@
     text-transform: uppercase;
     letter-spacing: 20px;
     font-size: 4vw;
-    margin-bottom: 2em;
+    margin-bottom: 4em;
 
     @media #{$desktop} {
   		font-size: 50px;
   	}
+
+    a {
+      letter-spacing: 2px;
+      font-size: 10px;
+    }
 
   }
 
