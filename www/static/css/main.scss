@@ -4,6 +4,10 @@
 
 .index {
 
+  > section {
+    margin-bottom: 50px;
+  }
+
   text-align: center;
 
   #logo {
@@ -13,7 +17,7 @@
 
     @media #{$desktop} {
       margin-top: 150px;
-      margin-bottom: 70px;
+      margin-bottom: 120px;
   	}
 
     svg {
@@ -52,6 +56,29 @@
   		font-size: 14px;
       letter-spacing: 3px;
   	}
+  }
+
+  #meny {
+    width: 95%;
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .meny1 svg{
+
+    }
+
+    .meny2 svg{
+      width: 70%;
+    }
+
+    .meny3 svg{
+
+    }
+
+    .meny4 svg{
+
+    }
   }
 
 }
