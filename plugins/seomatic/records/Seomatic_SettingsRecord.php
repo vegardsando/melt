@@ -48,6 +48,7 @@ class Seomatic_SettingsRecord extends BaseRecord
             'googleAnalyticsEEcommerce'         => array(AttributeType::Bool, 'default' => false),
             'googleAnalyticsLinkAttribution'    => array(AttributeType::Bool, 'default' => false),
             'googleAnalyticsLinker'             => array(AttributeType::Bool, 'default' => false),
+            'googleAnalyticsAnonymizeIp'        => array(AttributeType::Bool, 'default' => false),
             'siteOwnerType'                     => array(AttributeType::String, 'maxLength' => 50, 'default' => ''),
             'siteOwnerSubType'                  => array(AttributeType::String, 'maxLength' => 50, 'default' => ''),
             'siteOwnerSpecificType'             => array(AttributeType::String, 'maxLength' => 50, 'default' => ''),
@@ -78,6 +79,7 @@ class Seomatic_SettingsRecord extends BaseRecord
 
 /* -- LocalBusiness owner fields https://schema.org/LocalBusiness */
 
+            'localBusinessPriceRange'           => array(AttributeType::String, 'maxLength' => 10, 'default' => '$$$'),
             'localBusinessOwnerOpeningHours'    => array(AttributeType::Mixed),
 
 /* -- Corporation owner fields http://schema.org/Corporation */
@@ -117,6 +119,7 @@ class Seomatic_SettingsRecord extends BaseRecord
             'pinterestHandle'                   => array(AttributeType::String, 'maxLength' => 50, 'default' => ''),
             'githubHandle'                      => array(AttributeType::String, 'maxLength' => 50, 'default' => ''),
             'vimeoHandle'                       => array(AttributeType::String, 'maxLength' => 50, 'default' => ''),
+            'wikipediaUrl'                       => array(AttributeType::String, 'maxLength' => 100, 'default' => ''),
 
 
 /* --------------------------------------------------------------------------------
@@ -232,6 +235,8 @@ class Seomatic_SettingsRecord extends BaseRecord
     {
         return array(
             'siteSeoImage' => array(static::BELONGS_TO, 'AssetFileRecord'), /* -- "Id" is automatically appended */
+            'siteSeoTwitterImage' => array(static::BELONGS_TO, 'AssetFileRecord'), /* -- "Id" is automatically appended */
+            'siteSeoFacebookImage' => array(static::BELONGS_TO, 'AssetFileRecord'), /* -- "Id" is automatically appended */
             'genericOwnerImage' => array(static::BELONGS_TO, 'AssetFileRecord'), /* -- "Id" is automatically appended */
             'genericCreatorImage' => array(static::BELONGS_TO, 'AssetFileRecord'), /* -- "Id" is automatically appended */
         );

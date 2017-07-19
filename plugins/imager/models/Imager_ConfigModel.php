@@ -31,8 +31,8 @@ class Imager_ConfigModel extends BaseModel
             }
         }
         
-        if (isset(ImagerService::$craftPositonTranslate[(string)$this->position])) {
-            $this->position = ImagerService::$craftPositonTranslate[(string)$this->position];
+        if (isset(ImagerService::$craftPositionTranslate[(string)$this->position])) {
+            $this->position = ImagerService::$craftPositionTranslate[(string)$this->position];
         } 
             
         $this->position = str_replace('%', '', $this->position);
@@ -60,10 +60,17 @@ class Imager_ConfigModel extends BaseModel
           'hashFilename' => array(AttributeType::Bool),
           'hashPath' => array(AttributeType::Bool),
           'hashRemoteUrl' => array(AttributeType::Bool),
+          'useRemoteUrlQueryString' => array(AttributeType::Bool),
           'cacheEnabled' => array(AttributeType::Bool),
           'cacheDuration' => array(AttributeType::Number),
           'cacheDurationRemoteFiles' => array(AttributeType::Number),
           'instanceReuseEnabled' => array(AttributeType::Bool),
+          'noop' => array(AttributeType::Bool),
+          'suppressExceptions' => array(AttributeType::Bool),
+          'convertToRGB' => array(AttributeType::Bool),
+          'fillTransforms' => array(AttributeType::Bool),
+          'fillAttribute' => array(AttributeType::String),
+          'fillInterval' => array(AttributeType::Number),
           'jpegoptimEnabled' => array(AttributeType::Bool),
           'jpegoptimPath' => array(AttributeType::String),
           'jpegoptimOptionString' => array(AttributeType::String),
@@ -76,10 +83,26 @@ class Imager_ConfigModel extends BaseModel
           'optipngEnabled' => array(AttributeType::Bool),
           'optipngPath' => array(AttributeType::String),
           'optipngOptionString' => array(AttributeType::String),
+          'pngquantEnabled' => array(AttributeType::Bool),
+          'pngquantPath' => array(AttributeType::String),
+          'pngquantOptionString' => array(AttributeType::String),
+          'gifsicleEnabled' => array(AttributeType::Bool),
+          'gifsiclePath' => array(AttributeType::String),
+          'gifsicleOptionString' => array(AttributeType::String),
           'tinyPngEnabled' => array(AttributeType::Bool),
           'tinyPngApiKey' => array(AttributeType::String),
           'optimizeType' => array(AttributeType::String),
+          'skipExecutableExistCheck' => array(AttributeType::Bool),
           'logOptimizations' => array(AttributeType::Bool),
+          'imgixEnabled' => array(AttributeType::Bool),
+          'imgixDomains' => array(AttributeType::Mixed),
+          'imgixUseHttps' => array(AttributeType::Bool),
+          'imgixSignKey' => array(AttributeType::String),
+          'imgixSourceIsWebProxy' => array(AttributeType::Bool),
+          'imgixUseCloudSourcePath' => array(AttributeType::Bool),
+          'imgixShardStrategy' => array(AttributeType::String),
+          'imgixGetExternalImageDimensions' => array(AttributeType::Bool),
+          'imgixDefaultParams' => array(AttributeType::Mixed),
           'awsEnabled' => array(AttributeType::Bool),
           'awsAccessKey' => array(AttributeType::String),
           'awsSecretAccessKey' => array(AttributeType::String),
@@ -88,6 +111,12 @@ class Imager_ConfigModel extends BaseModel
           'awsCacheDuration' => array(AttributeType::Number),
           'awsRequestHeaders' => array(AttributeType::Mixed),
           'awsStorageType' => array(AttributeType::String),
+          'gcsEnabled' => array(AttributeType::Bool),
+          'gcsAccessKey' => array(AttributeType::String),
+          'gcsSecretAccessKey' => array(AttributeType::String),
+          'gcsBucket' => array(AttributeType::String),
+          'gcsFolder' => array(AttributeType::String),
+          'gcsCacheDuration' => array(AttributeType::Number),
           'cloudfrontInvalidateEnabled' => array(AttributeType::String),
           'cloudfrontDistributionId' => array(AttributeType::String),
           'removeMetadata' => array(AttributeType::Bool),
@@ -118,12 +147,7 @@ class Imager_ConfigModel extends BaseModel
      */
     private function _addToOverrideFilestring($k, $v)
     {
-        $r = (isset(ImagerService::$transformKeyTranslate[$k]) ? ImagerService::$transformKeyTranslate[$k] : $k) . $v;
+        $r = (isset(ImagerService::$transformKeyTranslate[$k]) ? ImagerService::$transformKeyTranslate[$k] : $k) . (is_array($v) ? md5(implode('-',$v)) : $v);
         $this->configOverrideString .= '_' . str_replace('%', '', str_replace(array(' ', '.'), '-', $r));
-    }
-
-    function __toString()
-    {
-        return Craft::t($this->url);
     }
 }

@@ -25,6 +25,8 @@ class Seomatic_SettingsModel extends BaseModel
             'siteTwitterCardType'               => array(AttributeType::String, 'default' => 'summary'),
             'siteOpenGraphType'                 => array(AttributeType::String, 'default' => 'website'),
             'siteSeoImageId'                    => array(AttributeType::Number, 'default' => null),
+            'siteSeoTwitterImageId'               => array(AttributeType::Number, 'default' => null),
+            'siteSeoFacebookImageId'              => array(AttributeType::Number, 'default' => null),
             'siteSeoImageTransform'             => array(AttributeType::String, 'default' => ''),
             'siteSeoFacebookImageTransform'     => array(AttributeType::String, 'default' => ''),
             'siteSeoTwitterImageTransform'      => array(AttributeType::String, 'default' => ''),
@@ -47,6 +49,7 @@ class Seomatic_SettingsModel extends BaseModel
             'googleAnalyticsEEcommerce'         => array(AttributeType::Bool, 'default' => false),
             'googleAnalyticsLinkAttribution'    => array(AttributeType::Bool, 'default' => false),
             'googleAnalyticsLinker'             => array(AttributeType::Bool, 'default' => false),
+            'googleAnalyticsAnonymizeIp'        => array(AttributeType::Bool, 'default' => false),
             'siteOwnerType'                     => array(AttributeType::String, 'default' => 'Organization'),
             'siteOwnerSubType'                  => array(AttributeType::String, 'default' => 'Corporation'),
             'siteOwnerSpecificType'             => array(AttributeType::String, 'default' => ''),
@@ -78,6 +81,7 @@ class Seomatic_SettingsModel extends BaseModel
 
 /* -- LocalBusiness owner fields https://schema.org/LocalBusiness */
 
+            'localBusinessPriceRange'           => array(AttributeType::String, 'maxLength' => 10, 'default' => '$$$'),
             'localBusinessOwnerOpeningHours'    => array(AttributeType::Mixed, 'default' => ''),
 
 /* -- Corporation owner fields http://schema.org/Corporation */
@@ -111,6 +115,7 @@ class Seomatic_SettingsModel extends BaseModel
             'pinterestHandle'                   => array(AttributeType::String, 'default' => ''),
             'githubHandle'                      => array(AttributeType::String, 'default' => ''),
             'vimeoHandle'                       => array(AttributeType::String, 'default' => ''),
+            'wikipediaUrl'                      => array(AttributeType::String, 'default' => ''),
 
 /* --------------------------------------------------------------------------------
     CEATOR settings

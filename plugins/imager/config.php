@@ -42,7 +42,15 @@ return array(
   'hashFilename' => 'postfix', // true, false, or 'postfix' (meaning only the generated part of the filename is hashed)
   'hashPath' => false, 
   'hashRemoteUrl' => false, // true, false, or 'host' (meaning only the host part of the url is hashed) 
+  'useRemoteUrlQueryString' => false,
   'instanceReuseEnabled' => false,
+  'noop' => false,
+  'suppressExceptions' => false,
+  'convertToRGB' => false, // Should images be converted to RGB?
+    
+  'fillTransforms' => false,
+  'fillAttribute' => 'width', // this could be any attribute that is numeric
+  'fillInterval' => '200',
   
   'jpegoptimEnabled' => false,
   'jpegoptimPath' => '/usr/bin/jpegoptim',
@@ -56,10 +64,27 @@ return array(
   'optipngEnabled' => false,
   'optipngPath' => '/usr/bin/optipng',
   'optipngOptionString' => '-o5',
+  'pngquantEnabled' => false,
+  'pngquantPath' => '/usr/bin/pngquant',
+  'pngquantOptionString' => '--strip --skip-if-larger',
+  'gifsicleEnabled' => false,
+  'gifsiclePath' => '/usr/bin/gifsicle',
+  'gifsicleOptionString' => '--optimize=3 --colors 256',
   'tinyPngEnabled' => false,
   'tinyPngApiKey' => '',
   'optimizeType' => 'task',
+  'skipExecutableExistCheck' => false,
   'logOptimizations' => false,
+    
+  'imgixEnabled' => false,
+  'imgixDomains' => null, // array of sources, ie array('your-source.imgix.net')
+  'imgixUseHttps' => true,
+  'imgixSignKey' => '', // this is also called `security token`, and you'll find it in your Imgix source details page
+  'imgixSourceIsWebProxy' => false,
+  'imgixUseCloudSourcePath' => true,
+  'imgixShardStrategy' => 'cycle', // 'cycle' or 'crc'
+  'imgixGetExternalImageDimensions' => true, // false disables download of external images, but makes the model less accurate 
+  'imgixDefaultParams' => null, // an array of default values that will be used for all imgix transforms (ie array('auto'=>'compress,format'))
   
   'awsEnabled' => false,
   'awsAccessKey' => '',
@@ -68,7 +93,14 @@ return array(
   'awsFolder' => '',
   'awsCacheDuration' => 1209600, // 14 days
   'awsRequestHeaders' => array(),
-  'awsStorageType' => 'standard', // 'standard' or 'rrs' (reduced redundancy storage)
+  'awsStorageType' => 'standard', // 'standard' or 'rrs' (reduced redundancy storage),
+
+  'gcsEnabled' => false,
+  'gcsAccessKey' => '',
+  'gcsSecretAccessKey' => '',
+  'gcsBucket' => '',
+  'gcsFolder' => '',
+  'gcsCacheDuration' => 1209600, // 14 days
 
   'cloudfrontInvalidateEnabled' => false,
   'cloudfrontDistributionId' => '',

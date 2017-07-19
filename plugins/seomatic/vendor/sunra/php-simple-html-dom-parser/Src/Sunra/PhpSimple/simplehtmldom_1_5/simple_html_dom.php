@@ -64,16 +64,16 @@ define('HDOM_INFO_OUTER',   6);
 define('HDOM_INFO_ENDSPACE',7);
 define('DEFAULT_TARGET_CHARSET', 'UTF-8');
 define('DEFAULT_BR_TEXT', "\r\n");
-define('DEFAULT_SPAN_TEXT', " ");
+define('DEFAULT_SPAN_TEXT', ", ");
 if (!defined('MAX_FILE_SIZE'))
 {
-    define('MAX_FILE_SIZE', 2000000);
+    define('MAX_FILE_SIZE', 4000000);
 }
 // helper functions
 // -----------------------------------------------------------------------------
 // get html dom from file
 // $maxlen is defined in the code as PHP_STREAM_COPY_ALL which is defined as -1.
-function file_get_html($url, $use_include_path = false, $context=null, $offset = -1, $maxLen=-1, $lowercase = true, $forceTagsClosed=true, $target_charset = DEFAULT_TARGET_CHARSET, $stripRN=true, $defaultBRText=DEFAULT_BR_TEXT, $defaultSpanText=DEFAULT_SPAN_TEXT)
+function file_get_html($url, $use_include_path = false, $context=null, $offset = 0, $maxLen=-1, $lowercase = true, $forceTagsClosed=true, $target_charset = DEFAULT_TARGET_CHARSET, $stripRN=true, $defaultBRText=DEFAULT_BR_TEXT, $defaultSpanText=DEFAULT_SPAN_TEXT)
 {
     // We DO force the tags to be terminated.
     $dom = new simple_html_dom(null, $lowercase, $forceTagsClosed, $target_charset, $stripRN, $defaultBRText, $defaultSpanText);
@@ -451,7 +451,14 @@ class simple_html_dom_node
             }
 
             // If this node is a span... add a space at the end of it so multiple spans don't run into each other.  This is plaintext after all.
-            if ($this->tag == "span" || $this->tag == "li")
+            if ($this->tag == "span"
+                || $this->tag == "li"
+                || $this->tag == "p"
+                || $this->tag == "h1"
+                || $this->tag == "h2"
+                || $this->tag == "h3"
+                || $this->tag == "h4"
+                || $this->tag == "h5" )
             {
                 $ret .= $this->dom->default_span_text;
             }
