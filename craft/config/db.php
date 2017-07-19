@@ -36,7 +36,8 @@ $customDbConfig = array(
 		'server' 	=> 'db146794.mysql.sysedata.no',
 		'user' 		=> 'db146794',
 		'password' 	=> 'cbb27e7d',
-		'database' 	=> 'db146794'
+		'database' 	=> 'db146794',
+		'initSQLs' => array("SET SESSION sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';")
 	)
 );
 
