@@ -1,7 +1,6 @@
 craft/storage/runtime/**
 db/**
 .vagrant/**
-*/dynamic/**
 */static/**
 gulpfile.js
 package.json

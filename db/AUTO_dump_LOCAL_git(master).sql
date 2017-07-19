@@ -3,7 +3,7 @@
 -- Host: localhost	Database: melt_craft
 -- ------------------------------------------------------
 -- Server version 	5.6.28
--- Date: Mon, 12 Sep 2016 17:17:29 +0000
+-- Date: Wed, 19 Jul 2017 11:38:27 +0000
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -52,6 +52,7 @@ CREATE TABLE `craft_assetfiles` (
 LOCK TABLES `craft_assetfiles` WRITE;
 /*!40000 ALTER TABLE `craft_assetfiles` DISABLE KEYS */;
 SET autocommit=0;
+INSERT INTO `craft_assetfiles` VALUES (15,1,2,'meny-sirkus.svg','image',961,2228,211803,'2017-07-06 18:08:44','2017-07-19 10:15:54','2017-07-19 11:01:20','7d779d36-bfc3-43ef-a71f-85d16bacdba1'),(17,1,2,'meny.st.hagen_ferdig.svg','image',1356,6616,172000,'2017-07-19 10:49:05','2017-07-19 10:29:52','2017-07-19 11:01:19','d78b27dd-800c-4973-84d8-d76dec42d46e'),(18,1,2,'meny-foodtruck.svg','image',416,706,85904,'2017-07-19 10:56:41','2017-07-19 11:01:17','2017-07-19 11:01:18','518bd34b-3c77-4f9b-a529-d8aabff7f1f0'),(19,1,1,'logo_foodtruck.svg','image',1097,371,12138,'2017-07-19 10:57:54','2017-07-19 11:01:19','2017-07-19 11:01:19','114111f3-d3cf-4871-bb29-b09658384e08'),(20,1,1,'logo_sandwichbar.svg','image',1097,371,5989,'2016-10-04 21:18:23','2017-07-19 11:01:21','2017-07-19 11:01:21','b96d7f32-ce38-4226-bd6c-0f4858bd2d2d');
 /*!40000 ALTER TABLE `craft_assetfiles` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -77,7 +78,7 @@ CREATE TABLE `craft_assetfolders` (
   KEY `craft_assetfolders_sourceId_fk` (`sourceId`),
   CONSTRAINT `craft_assetfolders_parentId_fk` FOREIGN KEY (`parentId`) REFERENCES `craft_assetfolders` (`id`) ON DELETE CASCADE,
   CONSTRAINT `craft_assetfolders_sourceId_fk` FOREIGN KEY (`sourceId`) REFERENCES `craft_assetsources` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -87,7 +88,7 @@ CREATE TABLE `craft_assetfolders` (
 LOCK TABLES `craft_assetfolders` WRITE;
 /*!40000 ALTER TABLE `craft_assetfolders` DISABLE KEYS */;
 SET autocommit=0;
-INSERT INTO `craft_assetfolders` VALUES (1,NULL,1,'Bilder','','2015-10-23 11:09:33','2015-10-23 11:09:33','f3142658-3fb9-4b94-92e5-763bed9dc7d7');
+INSERT INTO `craft_assetfolders` VALUES (1,NULL,1,'Bilder','','2015-10-23 11:09:33','2015-10-23 11:09:33','f3142658-3fb9-4b94-92e5-763bed9dc7d7'),(2,1,1,'Menyer','Menyer/','2017-07-19 10:15:52','2017-07-19 10:15:52','86dee4c2-22f9-4af1-8bd2-8d01ea6bd272');
 /*!40000 ALTER TABLE `craft_assetfolders` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -113,7 +114,7 @@ CREATE TABLE `craft_assetindexdata` (
   UNIQUE KEY `craft_assetindexdata_sessionId_sourceId_offset_unq_idx` (`sessionId`,`sourceId`,`offset`),
   KEY `craft_assetindexdata_sourceId_fk` (`sourceId`),
   CONSTRAINT `craft_assetindexdata_sourceId_fk` FOREIGN KEY (`sourceId`) REFERENCES `craft_assetsources` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -363,7 +364,7 @@ CREATE TABLE `craft_content` (
   KEY `craft_content_locale_fk` (`locale`),
   CONSTRAINT `craft_content_elementId_fk` FOREIGN KEY (`elementId`) REFERENCES `craft_elements` (`id`) ON DELETE CASCADE,
   CONSTRAINT `craft_content_locale_fk` FOREIGN KEY (`locale`) REFERENCES `craft_locales` (`locale`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -373,7 +374,7 @@ CREATE TABLE `craft_content` (
 LOCK TABLES `craft_content` WRITE;
 /*!40000 ALTER TABLE `craft_content` DISABLE KEYS */;
 SET autocommit=0;
-INSERT INTO `craft_content` VALUES (1,1,'nb_no',NULL,NULL,NULL,NULL,NULL,NULL,'2014-10-08 10:49:48','2016-03-23 14:49:38','22bdfcbe-634e-4e2b-aa58-5153c4ae4ef9'),(4,4,'nb_no',NULL,'',NULL,NULL,NULL,NULL,'2014-10-08 11:01:50','2015-10-25 12:23:57','5675a116-04ff-4fe6-9424-e96ccbef190c');
+INSERT INTO `craft_content` VALUES (1,1,'nb_no',NULL,NULL,NULL,NULL,NULL,NULL,'2014-10-08 10:49:48','2016-03-23 14:49:38','22bdfcbe-634e-4e2b-aa58-5153c4ae4ef9'),(4,4,'nb_no',NULL,'',NULL,NULL,NULL,NULL,'2014-10-08 11:01:50','2015-10-25 12:23:57','5675a116-04ff-4fe6-9424-e96ccbef190c'),(5,5,'nb_no','Forside',NULL,NULL,NULL,NULL,NULL,'2017-07-06 17:46:16','2017-07-19 11:35:06','01607889-bd79-40cb-bd67-9b08ff4e8c12'),(6,6,'nb_no','Sirkus Shopping',NULL,NULL,NULL,NULL,NULL,'2017-07-06 17:47:38','2017-07-19 11:03:20','651b8b7a-e874-4c2e-b619-31e36aa0df35'),(7,7,'nb_no','St.Hanshaugen',NULL,NULL,NULL,NULL,NULL,'2017-07-06 17:47:56','2017-07-19 11:01:56','55100832-2db1-47ec-b8a5-4698b62c5776'),(8,8,'nb_no','Foodtruck',NULL,NULL,NULL,NULL,NULL,'2017-07-06 17:48:12','2017-07-19 11:03:38','cc4da789-4bda-4093-aba7-b86fafe4a15b'),(15,15,'nb_no','Meny Sirkus',NULL,NULL,NULL,NULL,NULL,'2017-07-19 10:15:54','2017-07-19 11:01:20','f27a5e20-7c06-416b-9e32-b04b39cd6745'),(17,17,'nb_no','Meny St Hagen Ferdig',NULL,NULL,NULL,NULL,NULL,'2017-07-19 10:29:52','2017-07-19 11:01:19','d3600d83-d738-4087-93fc-113d61daacbb'),(18,18,'nb_no','Meny Foodtruck',NULL,NULL,NULL,NULL,NULL,'2017-07-19 11:01:17','2017-07-19 11:01:18','87ada30f-d40d-4fa1-8f3d-c1d6ba3b0266'),(19,19,'nb_no','Logo Foodtruck',NULL,NULL,NULL,NULL,NULL,'2017-07-19 11:01:19','2017-07-19 11:01:19','32f9e5a0-9544-41c1-ab2a-0c57a73f854a'),(20,20,'nb_no','Logo Sandwichbar',NULL,NULL,NULL,NULL,NULL,'2017-07-19 11:01:21','2017-07-19 11:01:21','d4afc042-2438-4e7c-897a-8bf06e010b42');
 /*!40000 ALTER TABLE `craft_content` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -434,7 +435,7 @@ CREATE TABLE `craft_cpnav_navs` (
   PRIMARY KEY (`id`),
   KEY `craft_cpnav_navs_layoutId_fk` (`layoutId`),
   CONSTRAINT `craft_cpnav_navs_layoutId_fk` FOREIGN KEY (`layoutId`) REFERENCES `craft_cpnav_layouts` (`id`) ON DELETE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -444,7 +445,7 @@ CREATE TABLE `craft_cpnav_navs` (
 LOCK TABLES `craft_cpnav_navs` WRITE;
 /*!40000 ALTER TABLE `craft_cpnav_navs` DISABLE KEYS */;
 SET autocommit=0;
-INSERT INTO `craft_cpnav_navs` VALUES (1,1,'dashboard','Kontrollpanel','Kontrollpanel',1,0,'dashboard','dashboard','gauge',NULL,0,0,'2015-10-25 12:33:16','2016-01-19 15:49:53','8389e86d-0c7f-4ab2-ae0e-dbfc180a967b'),(2,1,'globals','Globaler','Globaler',1,1,'globals/globals','globals/globals','globe',NULL,0,0,'2015-10-25 12:33:16','2016-01-19 15:49:53','701719dc-a04c-43ca-b5a7-55a89449d8dd'),(3,1,'assets','Filer','Filer',1,2,'assets','assets','assets',NULL,0,0,'2015-10-25 12:33:16','2016-01-19 15:49:53','e81b6a91-78f4-4302-9c73-99f416a526a0'),(5,1,'settings','Innstillinger','Innstillinger',1,4,'settings','settings','settings',NULL,0,0,'2016-01-19 15:33:51','2016-01-19 15:49:53','6fd29f8c-59cd-4003-835d-14a411012823'),(10,1,'fieldmanager','Field Manager','Field Manager',1,3,'fieldmanager','fieldmanager','iconSvg-fieldmanager',NULL,0,0,'2016-02-26 16:27:16','2016-02-26 16:27:16','eb33fe76-1282-4eae-a69a-e934508ddb71'),(15,1,'seomatic','SEOmatic','SEOmatic',1,4,'seomatic','seomatic','iconSvg-seomatic',NULL,0,0,'2016-06-14 12:18:20','2016-06-14 12:18:20','f22a3452-e1b2-4c14-86b5-7de93e35175f'),(16,1,'sherlock','Sherlock','Sherlock',1,5,'sherlock','sherlock','iconSvg-sherlock',NULL,0,0,'2016-06-14 13:25:59','2016-06-14 13:25:59','ea58a019-aaef-4045-b46f-98de29db7697');
+INSERT INTO `craft_cpnav_navs` VALUES (1,1,'dashboard','Kontrollpanel','Kontrollpanel',1,0,'dashboard','dashboard','gauge',NULL,0,0,'2015-10-25 12:33:16','2016-01-19 15:49:53','8389e86d-0c7f-4ab2-ae0e-dbfc180a967b'),(2,1,'globals','Globaler','Globaler',1,1,'globals/globals','globals/globals','globe',NULL,0,0,'2015-10-25 12:33:16','2016-01-19 15:49:53','701719dc-a04c-43ca-b5a7-55a89449d8dd'),(3,1,'assets','Filer','Filer',1,2,'assets','assets','assets',NULL,0,0,'2015-10-25 12:33:16','2016-01-19 15:49:53','e81b6a91-78f4-4302-9c73-99f416a526a0'),(5,1,'settings','Innstillinger','Innstillinger',1,4,'settings','settings','settings',NULL,0,0,'2016-01-19 15:33:51','2016-01-19 15:49:53','6fd29f8c-59cd-4003-835d-14a411012823'),(10,1,'fieldmanager','Field Manager','Field Manager',1,3,'fieldmanager','fieldmanager','iconSvg-fieldmanager',NULL,0,0,'2016-02-26 16:27:16','2016-02-26 16:27:16','eb33fe76-1282-4eae-a69a-e934508ddb71'),(15,1,'seomatic','SEOmatic','SEOmatic',1,4,'seomatic','seomatic','iconSvg-seomatic',NULL,0,0,'2016-06-14 12:18:20','2016-06-14 12:18:20','f22a3452-e1b2-4c14-86b5-7de93e35175f'),(16,1,'sherlock','Sherlock','Sherlock',1,5,'sherlock','sherlock','iconSvg-sherlock',NULL,0,0,'2016-06-14 13:25:59','2016-06-14 13:25:59','ea58a019-aaef-4045-b46f-98de29db7697'),(17,1,'entries','Artikler','Artikler',1,1,'entries','entries','section',NULL,0,0,'2017-07-06 17:46:18','2017-07-06 17:46:18','b8fd98dd-d32c-4148-aaff-235bb98f765d');
 /*!40000 ALTER TABLE `craft_cpnav_navs` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -534,7 +535,7 @@ CREATE TABLE `craft_elements` (
   KEY `craft_elements_type_idx` (`type`),
   KEY `craft_elements_enabled_idx` (`enabled`),
   KEY `craft_elements_archived_dateCreated_idx` (`archived`,`dateCreated`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -544,7 +545,7 @@ CREATE TABLE `craft_elements` (
 LOCK TABLES `craft_elements` WRITE;
 /*!40000 ALTER TABLE `craft_elements` DISABLE KEYS */;
 SET autocommit=0;
-INSERT INTO `craft_elements` VALUES (1,'User',1,0,'2014-10-08 10:49:48','2016-03-23 14:49:38','ffb29a05-dcce-4b95-85c8-cba0b3353fca'),(4,'GlobalSet',1,0,'2014-10-08 11:01:50','2015-10-25 12:23:57','e6f306b0-d137-4efa-9a3d-491a8c20ddb3');
+INSERT INTO `craft_elements` VALUES (1,'User',1,0,'2014-10-08 10:49:48','2016-03-23 14:49:38','ffb29a05-dcce-4b95-85c8-cba0b3353fca'),(4,'GlobalSet',1,0,'2014-10-08 11:01:50','2015-10-25 12:23:57','e6f306b0-d137-4efa-9a3d-491a8c20ddb3'),(5,'Entry',1,0,'2017-07-06 17:46:16','2017-07-19 11:35:06','05486ce2-8aa2-4ad7-ae48-51050363180e'),(6,'Entry',1,0,'2017-07-06 17:47:38','2017-07-19 11:03:20','24c54080-c79d-4e73-903e-bb50e4ae4350'),(7,'Entry',1,0,'2017-07-06 17:47:56','2017-07-19 11:01:56','ee8626f6-9753-43ee-a8e4-7605f41790de'),(8,'Entry',1,0,'2017-07-06 17:48:12','2017-07-19 11:03:38','32ec54ec-aa85-4263-8b5f-e3346e14b13a'),(15,'Asset',1,0,'2017-07-19 10:15:54','2017-07-19 11:01:20','6ff038cf-61a5-4d54-94de-730d59d9deac'),(17,'Asset',1,0,'2017-07-19 10:29:52','2017-07-19 11:01:19','e39a3e67-a08d-4639-b2ea-d2b5a9d24df2'),(18,'Asset',1,0,'2017-07-19 11:01:17','2017-07-19 11:01:18','4bf42097-ec74-42b2-b048-9f2b9c78c306'),(19,'Asset',1,0,'2017-07-19 11:01:19','2017-07-19 11:01:19','05196947-8e6f-4a78-86eb-ab0ded03c1f7'),(20,'Asset',1,0,'2017-07-19 11:01:21','2017-07-19 11:01:21','1d46d929-a0bc-460b-8457-3d6c0b30e2c0');
 /*!40000 ALTER TABLE `craft_elements` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -573,7 +574,7 @@ CREATE TABLE `craft_elements_i18n` (
   KEY `craft_elements_i18n_locale_fk` (`locale`),
   CONSTRAINT `craft_elements_i18n_elementId_fk` FOREIGN KEY (`elementId`) REFERENCES `craft_elements` (`id`) ON DELETE CASCADE,
   CONSTRAINT `craft_elements_i18n_locale_fk` FOREIGN KEY (`locale`) REFERENCES `craft_locales` (`locale`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -583,7 +584,7 @@ CREATE TABLE `craft_elements_i18n` (
 LOCK TABLES `craft_elements_i18n` WRITE;
 /*!40000 ALTER TABLE `craft_elements_i18n` DISABLE KEYS */;
 SET autocommit=0;
-INSERT INTO `craft_elements_i18n` VALUES (1,1,'nb_no','',NULL,1,'2014-10-08 10:49:48','2016-03-23 14:49:39','43ed65e2-12cd-4f2c-bf52-00955b97ea18'),(4,4,'nb_no','',NULL,1,'2014-10-08 11:01:50','2015-10-25 12:23:57','7aa419d8-daed-4559-b704-32bc0a213d9e');
+INSERT INTO `craft_elements_i18n` VALUES (1,1,'nb_no','',NULL,1,'2014-10-08 10:49:48','2016-03-23 14:49:39','43ed65e2-12cd-4f2c-bf52-00955b97ea18'),(4,4,'nb_no','',NULL,1,'2014-10-08 11:01:50','2015-10-25 12:23:57','7aa419d8-daed-4559-b704-32bc0a213d9e'),(5,5,'nb_no','forside','__home__',1,'2017-07-06 17:46:17','2017-07-19 11:35:06','9b6f8a1e-dc2b-49e9-a20f-62b73a40a95c'),(6,6,'nb_no','sirkus-shopping','avdelinger/sirkus-shopping',1,'2017-07-06 17:47:38','2017-07-19 11:03:20','8cd45756-4098-4250-b9cb-88da40cfb43e'),(7,7,'nb_no','st-hanshaugen','avdelinger/st-hanshaugen',1,'2017-07-06 17:47:56','2017-07-19 11:01:56','ddaa8a3d-6099-4b44-a8ff-c9ec751c329c'),(8,8,'nb_no','foodtruck','avdelinger/foodtruck',1,'2017-07-06 17:48:12','2017-07-19 11:03:38','c0d98be6-868b-4dc1-8e43-5a1cacfeb620'),(15,15,'nb_no','meny-sirkus',NULL,1,'2017-07-19 10:15:54','2017-07-19 11:01:20','b148369c-5e4b-4fce-b91e-261c56cd2890'),(17,17,'nb_no','meny-st-hagen-ferdig',NULL,1,'2017-07-19 10:29:52','2017-07-19 11:01:19','48330318-f934-420c-9756-c1c7bb52b555'),(18,18,'nb_no','meny-foodtruck',NULL,1,'2017-07-19 11:01:17','2017-07-19 11:01:18','e3853f13-28e5-45d8-bb1b-fd0eb299e8dd'),(19,19,'nb_no','logo-foodtruck',NULL,1,'2017-07-19 11:01:19','2017-07-19 11:01:19','bd5d77f9-82d6-468c-ad85-18fd7a349e9e'),(20,20,'nb_no','logo-sandwichbar',NULL,1,'2017-07-19 11:01:21','2017-07-19 11:01:21','1d58ee66-c3df-4cc4-8784-c5572e8d7b0d');
 /*!40000 ALTER TABLE `craft_elements_i18n` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -657,6 +658,7 @@ CREATE TABLE `craft_entries` (
 LOCK TABLES `craft_entries` WRITE;
 /*!40000 ALTER TABLE `craft_entries` DISABLE KEYS */;
 SET autocommit=0;
+INSERT INTO `craft_entries` VALUES (5,1,NULL,NULL,'2017-07-06 17:46:15',NULL,'2017-07-06 17:46:17','2017-07-19 11:35:06','5090cd23-08ed-4173-bab4-8fd7cd98ee06'),(6,2,2,1,'2017-07-06 17:47:00',NULL,'2017-07-06 17:47:38','2017-07-19 11:03:20','4f368598-bd73-49a9-b0e0-209d50b40a0e'),(7,2,2,1,'2017-07-06 17:47:00',NULL,'2017-07-06 17:47:56','2017-07-19 11:01:56','9c1931ee-d663-4892-bb91-3446abcd5437'),(8,2,2,1,'2017-07-06 17:48:00',NULL,'2017-07-06 17:48:12','2017-07-19 11:03:38','bf9dab4a-4eb1-4925-a477-01a974b09138');
 /*!40000 ALTER TABLE `craft_entries` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -728,7 +730,7 @@ CREATE TABLE `craft_entrytypes` (
   KEY `craft_entrytypes_fieldLayoutId_fk` (`fieldLayoutId`),
   CONSTRAINT `craft_entrytypes_fieldLayoutId_fk` FOREIGN KEY (`fieldLayoutId`) REFERENCES `craft_fieldlayouts` (`id`) ON DELETE SET NULL,
   CONSTRAINT `craft_entrytypes_sectionId_fk` FOREIGN KEY (`sectionId`) REFERENCES `craft_sections` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -738,6 +740,7 @@ CREATE TABLE `craft_entrytypes` (
 LOCK TABLES `craft_entrytypes` WRITE;
 /*!40000 ALTER TABLE `craft_entrytypes` DISABLE KEYS */;
 SET autocommit=0;
+INSERT INTO `craft_entrytypes` VALUES (1,1,40,'Forside','forside',0,NULL,'{section.name|raw}',1,'2017-07-06 17:46:15','2017-07-19 11:34:46','315784fd-26ba-49cd-8f40-0f4085091f75'),(2,2,39,'Avdelinger','avdelinger',1,'Tittel',NULL,1,'2017-07-06 17:47:19','2017-07-19 11:00:09','e4088d28-4a94-4b6d-9b30-85818e69826c');
 /*!40000 ALTER TABLE `craft_entrytypes` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -769,7 +772,7 @@ CREATE TABLE `craft_entryversions` (
   CONSTRAINT `craft_entryversions_entryId_fk` FOREIGN KEY (`entryId`) REFERENCES `craft_entries` (`id`) ON DELETE CASCADE,
   CONSTRAINT `craft_entryversions_locale_fk` FOREIGN KEY (`locale`) REFERENCES `craft_locales` (`locale`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `craft_entryversions_sectionId_fk` FOREIGN KEY (`sectionId`) REFERENCES `craft_sections` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -779,6 +782,7 @@ CREATE TABLE `craft_entryversions` (
 LOCK TABLES `craft_entryversions` WRITE;
 /*!40000 ALTER TABLE `craft_entryversions` DISABLE KEYS */;
 SET autocommit=0;
+INSERT INTO `craft_entryversions` VALUES (1,5,1,1,'nb_no',1,NULL,'{\"typeId\":\"1\",\"authorId\":null,\"title\":\"Forside\",\"slug\":\"forside\",\"postDate\":1499363175,\"expiryDate\":null,\"enabled\":1,\"parentId\":null,\"fields\":[]}','2017-07-06 17:46:17','2017-07-06 17:46:17','50834923-212a-4aa6-b5be-a1a6375fb8f7'),(2,6,2,1,'nb_no',1,'','{\"typeId\":null,\"authorId\":\"1\",\"title\":\"Melt Sirkus Shopping\",\"slug\":\"melt-sirkus-shopping\",\"postDate\":1499363258,\"expiryDate\":null,\"enabled\":1,\"parentId\":null,\"fields\":[]}','2017-07-06 17:47:38','2017-07-06 17:47:38','e1e33bb0-2d71-4061-b66e-037283668e29'),(3,7,2,1,'nb_no',1,'','{\"typeId\":null,\"authorId\":\"1\",\"title\":\"Melt St.Hanshaugen\",\"slug\":\"melt-st-hanshaugen\",\"postDate\":1499363276,\"expiryDate\":null,\"enabled\":1,\"parentId\":null,\"fields\":[]}','2017-07-06 17:47:56','2017-07-06 17:47:56','9b8e4567-5de2-4f47-b5a0-34704d903668'),(4,8,2,1,'nb_no',1,'','{\"typeId\":null,\"authorId\":\"1\",\"title\":\"Melt Foodtruck\",\"slug\":\"melt-foodtruck\",\"postDate\":1499363292,\"expiryDate\":null,\"enabled\":1,\"parentId\":null,\"fields\":[]}','2017-07-06 17:48:12','2017-07-06 17:48:12','77935a4d-a878-4f46-ac4e-e0413327a46d'),(5,7,2,1,'nb_no',2,'','{\"typeId\":\"2\",\"authorId\":\"1\",\"title\":\"Melt St.Hanshaugen\",\"slug\":\"melt-st-hanshaugen\",\"postDate\":1499363220,\"expiryDate\":null,\"enabled\":1,\"parentId\":null,\"fields\":{\"22\":[\"17\"]}}','2017-07-19 10:31:45','2017-07-19 10:31:45','fb06829e-8812-4b1e-88e2-57c4817432c1'),(6,7,2,1,'nb_no',3,'','{\"typeId\":\"2\",\"authorId\":\"1\",\"title\":\"St.Hanshaugen\",\"slug\":\"st-hanshaugen\",\"postDate\":1499363220,\"expiryDate\":null,\"enabled\":1,\"parentId\":null,\"fields\":{\"23\":[\"19\"],\"22\":[\"17\"]}}','2017-07-19 11:01:56','2017-07-19 11:01:56','b4f79ed7-1bad-45a1-8bbb-30136f686adb'),(7,8,2,1,'nb_no',2,'','{\"typeId\":\"2\",\"authorId\":\"1\",\"title\":\"Melt Foodtruck\",\"slug\":\"melt-foodtruck\",\"postDate\":1499363280,\"expiryDate\":null,\"enabled\":1,\"parentId\":null,\"fields\":{\"23\":\"\",\"22\":\"\"}}','2017-07-19 11:02:18','2017-07-19 11:02:18','e6450f9d-7995-4865-b0d9-b79954db9fd8'),(8,8,2,1,'nb_no',3,'','{\"typeId\":\"2\",\"authorId\":\"1\",\"title\":\"Melt Foodtruck\",\"slug\":\"melt-foodtruck\",\"postDate\":1499363280,\"expiryDate\":null,\"enabled\":1,\"parentId\":null,\"fields\":{\"23\":[\"19\"],\"22\":[\"18\"]}}','2017-07-19 11:02:40','2017-07-19 11:02:40','75fb1e6b-f120-4547-b4cb-66392be4b76e'),(9,6,2,1,'nb_no',2,'','{\"typeId\":\"2\",\"authorId\":\"1\",\"title\":\"Melt Sirkus Shopping\",\"slug\":\"melt-sirkus-shopping\",\"postDate\":1499363220,\"expiryDate\":null,\"enabled\":1,\"parentId\":null,\"fields\":{\"23\":[\"20\"],\"22\":[\"15\"]}}','2017-07-19 11:03:04','2017-07-19 11:03:04','03fba703-3b36-4085-b45f-ebc097fc7611'),(10,6,2,1,'nb_no',3,'','{\"typeId\":\"2\",\"authorId\":\"1\",\"title\":\"Melt Sirkus Shopping\",\"slug\":\"melt-sirkus-shopping\",\"postDate\":1499363220,\"expiryDate\":null,\"enabled\":1,\"parentId\":null,\"fields\":{\"23\":[\"20\"],\"22\":[\"15\"]}}','2017-07-19 11:03:08','2017-07-19 11:03:08','f2576706-df5b-47ad-b67b-df9eddce3fea'),(11,6,2,1,'nb_no',4,'','{\"typeId\":\"2\",\"authorId\":\"1\",\"title\":\"Sirkus Shopping\",\"slug\":\"sirkus-shopping\",\"postDate\":1499363220,\"expiryDate\":null,\"enabled\":1,\"parentId\":null,\"fields\":{\"23\":[\"20\"],\"22\":[\"15\"]}}','2017-07-19 11:03:20','2017-07-19 11:03:20','bb3bdc68-e3f1-4262-ba72-bd4371a69554'),(12,8,2,1,'nb_no',4,'','{\"typeId\":\"2\",\"authorId\":\"1\",\"title\":\"Foodtruck\",\"slug\":\"foodtruck\",\"postDate\":1499363280,\"expiryDate\":null,\"enabled\":1,\"parentId\":null,\"fields\":{\"23\":[\"19\"],\"22\":[\"18\"]}}','2017-07-19 11:03:38','2017-07-19 11:03:38','62dee6c3-40b7-42d7-934e-18ce201690df'),(13,5,1,1,'nb_no',2,'','{\"typeId\":null,\"authorId\":null,\"title\":\"Forside\",\"slug\":\"forside\",\"postDate\":1499363175,\"expiryDate\":null,\"enabled\":1,\"parentId\":null,\"fields\":{\"24\":[\"8\",\"6\",\"7\"]}}','2017-07-19 11:35:06','2017-07-19 11:35:06','276bb2de-cebb-46ce-8793-af474eb322dd');
 /*!40000 ALTER TABLE `craft_entryversions` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -836,7 +840,7 @@ CREATE TABLE `craft_fieldlayoutfields` (
   CONSTRAINT `craft_fieldlayoutfields_fieldId_fk` FOREIGN KEY (`fieldId`) REFERENCES `craft_fields` (`id`) ON DELETE CASCADE,
   CONSTRAINT `craft_fieldlayoutfields_layoutId_fk` FOREIGN KEY (`layoutId`) REFERENCES `craft_fieldlayouts` (`id`) ON DELETE CASCADE,
   CONSTRAINT `craft_fieldlayoutfields_tabId_fk` FOREIGN KEY (`tabId`) REFERENCES `craft_fieldlayouttabs` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -846,7 +850,7 @@ CREATE TABLE `craft_fieldlayoutfields` (
 LOCK TABLES `craft_fieldlayoutfields` WRITE;
 /*!40000 ALTER TABLE `craft_fieldlayoutfields` DISABLE KEYS */;
 SET autocommit=0;
-INSERT INTO `craft_fieldlayoutfields` VALUES (47,24,15,6,0,2,'2015-10-25 12:19:34','2015-10-25 12:19:34','8f8aaaad-cdcc-43d9-8018-37b52a4ef6bd'),(75,35,26,21,0,1,'2016-06-08 08:27:39','2016-06-08 08:27:39','2688b460-dae3-4aaa-b276-0ae02239e680'),(76,35,26,17,0,2,'2016-06-08 08:27:39','2016-06-08 08:27:39','8ab4a550-430c-4ca6-95b6-9f520ae582c9'),(77,35,26,18,0,3,'2016-06-08 08:27:39','2016-06-08 08:27:39','5ee3c7a7-0841-4434-8b2e-3053498fb03b');
+INSERT INTO `craft_fieldlayoutfields` VALUES (47,24,15,6,0,2,'2015-10-25 12:19:34','2015-10-25 12:19:34','8f8aaaad-cdcc-43d9-8018-37b52a4ef6bd'),(75,35,26,21,0,1,'2016-06-08 08:27:39','2016-06-08 08:27:39','2688b460-dae3-4aaa-b276-0ae02239e680'),(76,35,26,17,0,2,'2016-06-08 08:27:39','2016-06-08 08:27:39','8ab4a550-430c-4ca6-95b6-9f520ae582c9'),(77,35,26,18,0,3,'2016-06-08 08:27:39','2016-06-08 08:27:39','5ee3c7a7-0841-4434-8b2e-3053498fb03b'),(79,39,28,23,0,1,'2017-07-19 11:00:09','2017-07-19 11:00:09','7a736985-7124-468d-ba4b-c13b48644a63'),(80,39,28,22,0,2,'2017-07-19 11:00:09','2017-07-19 11:00:09','44e280f4-2f88-4633-9c1d-0c912d60ffb6'),(81,40,29,24,0,1,'2017-07-19 11:34:46','2017-07-19 11:34:46','18811581-f2c1-43b4-90b0-6c2a80dfd07d');
 /*!40000 ALTER TABLE `craft_fieldlayoutfields` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -865,7 +869,7 @@ CREATE TABLE `craft_fieldlayouts` (
   `uid` char(36) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `craft_fieldlayouts_type_idx` (`type`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -875,7 +879,7 @@ CREATE TABLE `craft_fieldlayouts` (
 LOCK TABLES `craft_fieldlayouts` WRITE;
 /*!40000 ALTER TABLE `craft_fieldlayouts` DISABLE KEYS */;
 SET autocommit=0;
-INSERT INTO `craft_fieldlayouts` VALUES (1,'Tag','2014-10-08 10:49:50','2014-10-08 10:49:50','735aea8d-1467-42fe-a635-fe07456aef93'),(3,'Entry','2014-10-08 10:49:51','2014-10-08 10:49:51','34c943ee-38b2-46f1-977d-5a69371e7b36'),(5,'Entry','2014-10-08 10:49:51','2014-10-08 10:49:51','abf58a12-09f1-4aa1-a709-7f4b5c553eab'),(24,'GlobalSet','2015-10-25 12:19:34','2015-10-25 12:19:34','3390f85f-56c6-4444-baaa-e7209c7cdcd0'),(35,'Asset','2016-06-08 08:27:39','2016-06-08 08:27:39','2f62a4dc-1f0f-431b-845c-ccffcb78f627');
+INSERT INTO `craft_fieldlayouts` VALUES (1,'Tag','2014-10-08 10:49:50','2014-10-08 10:49:50','735aea8d-1467-42fe-a635-fe07456aef93'),(3,'Entry','2014-10-08 10:49:51','2014-10-08 10:49:51','34c943ee-38b2-46f1-977d-5a69371e7b36'),(5,'Entry','2014-10-08 10:49:51','2014-10-08 10:49:51','abf58a12-09f1-4aa1-a709-7f4b5c553eab'),(24,'GlobalSet','2015-10-25 12:19:34','2015-10-25 12:19:34','3390f85f-56c6-4444-baaa-e7209c7cdcd0'),(35,'Asset','2016-06-08 08:27:39','2016-06-08 08:27:39','2f62a4dc-1f0f-431b-845c-ccffcb78f627'),(39,'Entry','2017-07-19 11:00:09','2017-07-19 11:00:09','e2012bde-975d-485f-8945-812fb64b2380'),(40,'Entry','2017-07-19 11:34:46','2017-07-19 11:34:46','dedb3b8f-1797-47f6-a4df-c74e43bee10a');
 /*!40000 ALTER TABLE `craft_fieldlayouts` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -898,7 +902,7 @@ CREATE TABLE `craft_fieldlayouttabs` (
   KEY `craft_fieldlayouttabs_sortOrder_idx` (`sortOrder`),
   KEY `craft_fieldlayouttabs_layoutId_fk` (`layoutId`),
   CONSTRAINT `craft_fieldlayouttabs_layoutId_fk` FOREIGN KEY (`layoutId`) REFERENCES `craft_fieldlayouts` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -908,7 +912,7 @@ CREATE TABLE `craft_fieldlayouttabs` (
 LOCK TABLES `craft_fieldlayouttabs` WRITE;
 /*!40000 ALTER TABLE `craft_fieldlayouttabs` DISABLE KEYS */;
 SET autocommit=0;
-INSERT INTO `craft_fieldlayouttabs` VALUES (1,3,'Innhold',1,'2014-10-08 10:49:51','2014-10-08 10:49:51','d35bab09-a914-4602-91df-0a3c3baa2cfc'),(2,5,'Innhold',1,'2014-10-08 10:49:51','2014-10-08 10:49:51','c39b036d-dd74-43ad-b5f0-cc0dfbd18b00'),(4,1,'Content',1,'2014-12-12 08:34:38','2014-12-12 08:34:38','075c4aae-210e-47b1-b49d-741e200c9155'),(15,24,'Innhold',1,'2015-10-25 12:19:34','2015-10-25 12:19:34','75724dac-5fe3-4ccb-b59e-d87edf7e9a6e'),(26,35,'Innhold',1,'2016-06-08 08:27:39','2016-06-08 08:27:39','ecb34c16-5ecd-4248-858f-4abe8652da43');
+INSERT INTO `craft_fieldlayouttabs` VALUES (1,3,'Innhold',1,'2014-10-08 10:49:51','2014-10-08 10:49:51','d35bab09-a914-4602-91df-0a3c3baa2cfc'),(2,5,'Innhold',1,'2014-10-08 10:49:51','2014-10-08 10:49:51','c39b036d-dd74-43ad-b5f0-cc0dfbd18b00'),(4,1,'Content',1,'2014-12-12 08:34:38','2014-12-12 08:34:38','075c4aae-210e-47b1-b49d-741e200c9155'),(15,24,'Innhold',1,'2015-10-25 12:19:34','2015-10-25 12:19:34','75724dac-5fe3-4ccb-b59e-d87edf7e9a6e'),(26,35,'Innhold',1,'2016-06-08 08:27:39','2016-06-08 08:27:39','ecb34c16-5ecd-4248-858f-4abe8652da43'),(28,39,'Menyer',1,'2017-07-19 11:00:09','2017-07-19 11:00:09','c204305e-4faa-465d-b097-c416bf80f39a'),(29,40,'Avdelinger',1,'2017-07-19 11:34:46','2017-07-19 11:34:46','3e0f2669-9200-4280-aa7b-7211539363f2');
 /*!40000 ALTER TABLE `craft_fieldlayouttabs` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -937,7 +941,7 @@ CREATE TABLE `craft_fields` (
   KEY `craft_fields_context_idx` (`context`),
   KEY `craft_fields_groupId_fk` (`groupId`),
   CONSTRAINT `craft_fields_groupId_fk` FOREIGN KEY (`groupId`) REFERENCES `craft_fieldgroups` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -947,7 +951,7 @@ CREATE TABLE `craft_fields` (
 LOCK TABLES `craft_fields` WRITE;
 /*!40000 ALTER TABLE `craft_fields` DISABLE KEYS */;
 SET autocommit=0;
-INSERT INTO `craft_fields` VALUES (6,2,'Google Tag manager','googleTagManager','global','',0,'CodeBlock',NULL,'2015-10-21 09:18:34','2015-10-25 11:56:16','90d3f333-c2d5-4a6e-9498-c2238a76a3b5'),(17,1,'Brukes i','brukesI','global','',0,'Introvert_ReverseRelatedEntries','{\"sections\":\"*\"}','2015-11-20 09:42:29','2016-01-19 15:58:10','699215c4-337e-44d1-b222-72c69b3d1e68'),(18,1,'Fokuspunkt','fokuspunkt','global','',0,'FocalPointField_FocalPoint','{\"defaultFocalPoint\":\"\"}','2016-01-19 15:58:29','2016-01-19 15:58:29','74a3919e-0f9f-4f9d-bc71-7e0335ce7f1d'),(19,3,'Meta','meta','global','',0,'Seomatic_Meta',NULL,'2016-01-19 16:49:26','2016-01-19 16:49:26','714df43d-ad7e-45a3-8c64-a22623559d5b'),(21,1,'Alternativ tekst','alt','global','',0,'PlainText','{\"placeholder\":\"\",\"maxLength\":\"\",\"multiline\":\"\",\"initialRows\":\"4\"}','2016-02-15 11:49:15','2016-02-15 11:49:15','7592614d-9607-4aa9-9f4b-cd073d7a7de5');
+INSERT INTO `craft_fields` VALUES (6,2,'Google Tag manager','googleTagManager','global','',0,'CodeBlock',NULL,'2015-10-21 09:18:34','2015-10-25 11:56:16','90d3f333-c2d5-4a6e-9498-c2238a76a3b5'),(17,1,'Brukes i','brukesI','global','',0,'Introvert_ReverseRelatedEntries','{\"sections\":\"*\"}','2015-11-20 09:42:29','2016-01-19 15:58:10','699215c4-337e-44d1-b222-72c69b3d1e68'),(18,1,'Fokuspunkt','fokuspunkt','global','',0,'FocalPointField_FocalPoint','{\"defaultFocalPoint\":\"\"}','2016-01-19 15:58:29','2016-01-19 15:58:29','74a3919e-0f9f-4f9d-bc71-7e0335ce7f1d'),(19,3,'Meta','meta','global','',0,'Seomatic_Meta',NULL,'2016-01-19 16:49:26','2016-01-19 16:49:26','714df43d-ad7e-45a3-8c64-a22623559d5b'),(21,1,'Alternativ tekst','alt','global','',0,'PlainText','{\"placeholder\":\"\",\"maxLength\":\"\",\"multiline\":\"\",\"initialRows\":\"4\"}','2016-02-15 11:49:15','2016-02-15 11:49:15','7592614d-9607-4aa9-9f4b-cd073d7a7de5'),(22,2,'Meny','meny','global','',0,'Assets','{\"useSingleFolder\":\"\",\"sources\":\"*\",\"defaultUploadLocationSource\":\"1\",\"defaultUploadLocationSubpath\":\"\",\"singleUploadLocationSource\":\"1\",\"singleUploadLocationSubpath\":\"\",\"restrictFiles\":\"\",\"limit\":\"1\",\"viewMode\":\"list\",\"selectionLabel\":\"\"}','2017-07-19 10:30:59','2017-07-19 11:00:26','9ea8e315-2bef-4c90-a742-d9b2c9ba7a86'),(23,2,'Logo','logo','global','',0,'Assets','{\"useSingleFolder\":\"\",\"sources\":\"*\",\"defaultUploadLocationSource\":\"1\",\"defaultUploadLocationSubpath\":\"\",\"singleUploadLocationSource\":\"1\",\"singleUploadLocationSubpath\":\"\",\"restrictFiles\":\"\",\"limit\":\"1\",\"viewMode\":\"list\",\"selectionLabel\":\"\"}','2017-07-19 10:58:25','2017-07-19 10:58:25','f053fe92-9062-4687-ba37-2b41cb106fde'),(24,2,'Avdelinger','avdelinger','global','',0,'Entries','{\"sources\":[\"section:2\"],\"limit\":\"\",\"selectionLabel\":\"Legg til avdeling\"}','2017-07-19 11:34:39','2017-07-19 11:34:39','b1196183-d001-4bd4-85d4-8e8a7a568273');
 /*!40000 ALTER TABLE `craft_fields` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -1195,7 +1199,7 @@ CREATE TABLE `craft_plugins` (
 LOCK TABLES `craft_plugins` WRITE;
 /*!40000 ALTER TABLE `craft_plugins` DISABLE KEYS */;
 SET autocommit=0;
-INSERT INTO `craft_plugins` VALUES (1,'Directory','1.0.12',NULL,NULL,'unknown',1,NULL,'2014-10-08 10:52:21','2014-10-08 10:52:21','2014-10-08 10:52:21','aba3661c-99d2-4d34-9788-30e05197134f'),(3,'ObsoleteRedirect','0.1.0',NULL,NULL,'unknown',1,NULL,'2015-05-14 10:49:46','2015-05-14 10:49:46','2016-09-12 15:02:47','94eaed70-d03e-430c-be1f-18f0a30612d4'),(5,'AssetRev','3.0.0',NULL,NULL,'unknown',1,'{\"manifestPath\":\"..\\/cachebust.json\"}','2015-06-16 14:53:46','2015-06-16 14:53:46','2016-09-12 15:02:47','5c6c2959-e9ef-49b3-b92b-8529b4157f0d'),(6,'Guano','0.2',NULL,NULL,'unknown',1,NULL,'2015-10-08 11:08:49','2015-10-08 11:08:49','2016-09-12 15:02:47','feba2548-9685-4cfb-ad7a-d1e4776bb9cc'),(8,'ImageResizer','0.1.4','1.0.0',NULL,'unknown',1,'{\"enabled\":\"1\",\"imageWidth\":\"2048\",\"imageHeight\":\"2048\",\"imageQuality\":\"100\",\"assetSources\":\"*\"}','2015-10-23 10:00:34','2015-10-23 10:00:34','2016-09-12 15:02:47','4c10ef35-fcc0-4f06-9d43-c6d14622a053'),(9,'SuperTable','1.0.1','1.0.0',NULL,'unknown',1,NULL,'2015-10-23 15:33:34','2015-10-23 15:33:34','2016-09-12 15:02:47','f99b9499-b2b3-4189-9f1d-c4554def3374'),(11,'EntryTitleEditable','1.0',NULL,NULL,'unknown',1,NULL,'2015-10-23 16:17:02','2015-10-23 16:17:02','2016-01-19 15:50:10','07dc8a59-da92-47cc-9f30-759d07e05ac3'),(12,'LabelEnvironment','0.1.0',NULL,NULL,'unknown',1,'{\"colorMappings\":{\"development\":\"#000000\",\"staging\":\"#0000ff\",\"preview\":\"#ff0000\",\"production\":\"#16c68e\"},\"prefix\":\"\",\"suffix\":\"\"}','2015-10-25 11:35:32','2015-10-25 11:35:32','2016-09-12 15:02:47','7b4fe278-6804-4f70-b0bf-e61c7fdf6d2c'),(14,'CodeBlock','1.1.0','1.1.0',NULL,'unknown',1,NULL,'2015-10-25 11:55:47','2015-10-25 11:55:47','2016-09-12 15:02:47','e579c636-a1a0-4788-ae1a-f0b3630abe22'),(16,'CpNav','1.7.5','1.1.0',NULL,'unknown',1,'{\"showQuickAddMenu\":\"\"}','2015-10-25 12:33:15','2015-10-25 12:33:15','2016-09-12 15:02:47','0b042902-349c-41ef-98d8-bb2a31b445cd'),(17,'Imager','1.2.1','1.0.0',NULL,'unknown',1,NULL,'2015-10-30 15:57:14','2015-10-30 15:57:14','2016-09-12 15:02:47','b0c87aa0-53d6-4420-a297-2211da547370'),(19,'CpFieldLinks','1.2','1.0',NULL,'unknown',1,NULL,'2015-11-13 09:56:41','2015-11-13 09:56:41','2016-09-12 15:02:47','d5fd8f41-473d-42e9-9145-bf64eea6d7f3'),(20,'Reasons','1.0.6','1.1',NULL,'unknown',1,NULL,'2015-11-13 10:49:20','2015-11-13 10:49:20','2016-09-12 15:02:47','208a9b9d-dc2c-48a3-92f5-7e6da66d905a'),(21,'Introvert','0.2',NULL,NULL,'unknown',1,NULL,'2015-11-20 09:36:39','2015-11-20 09:36:39','2016-09-12 15:02:47','7a51354f-a639-4f84-af29-0ee5efe87465'),(22,'QuickField','0.3.3','1.0.0',NULL,'unknown',1,NULL,'2015-12-08 09:34:10','2015-12-08 09:34:10','2016-09-12 15:02:47','e8aac0ec-e200-4781-aacb-465aa765abb4'),(24,'FocalPointField','1.0.1',NULL,NULL,'unknown',1,NULL,'2016-01-19 15:57:13','2016-01-19 15:57:13','2016-09-12 15:02:47','623245d2-1fe2-4cbb-b4d6-405c5667e449'),(25,'Seomatic','1.1.33','1.1.21',NULL,'unknown',1,NULL,'2016-01-19 16:04:43','2016-01-19 16:04:43','2016-09-12 15:02:47','8f159c1e-3a2a-4b08-adc7-1cac6fb79747'),(26,'Sitemap','v1.0.0-alpha.4',NULL,NULL,'unknown',1,NULL,'2016-01-19 16:13:28','2016-01-19 16:13:28','2016-09-12 15:02:47','273cbb5c-e494-4e7b-aabd-464c3e5fb078'),(29,'Relabel','0.1.3','1.0.0',NULL,'unknown',1,NULL,'2016-01-19 16:57:21','2016-01-19 16:57:21','2016-09-12 15:02:47','5294ce3b-08d7-4bd3-8e2f-6ff84c6cb5ca'),(34,'FieldManager','1.5.2','1.0.0',NULL,'unknown',1,NULL,'2016-02-26 16:27:16','2016-02-26 16:27:16','2016-09-12 15:02:47','14719c25-9270-4b40-9b27-87269de01425'),(35,'Inlin','1.1',NULL,NULL,'unknown',1,NULL,'2016-04-12 14:46:20','2016-04-12 14:46:20','2016-09-12 15:02:47','dc6d6c60-82fe-4d66-bf61-d6c6fad7a3d8'),(36,'CacheMonster','1.0.0',NULL,NULL,'unknown',1,NULL,'2016-05-12 08:10:23','2016-05-12 08:10:23','2016-09-12 15:02:47','7161f3cd-99a8-4e20-87a2-e4bb3267bf01'),(40,'Sherlock','1.1.0','1.0.0',NULL,'unknown',1,'{\"liveMode\":\"\",\"highSecurityLevel\":\"1\",\"logAllEvents\":\"1\",\"headerProtection\":\"1\",\"notificationEmailAddresses\":\"dev@mustasj.no\",\"pluginVulnerabilitiesFeedUrl\":\"https:\\/\\/raw.githubusercontent.com\\/putyourlightson\\/craft-plugin-vulnerabilities\\/master\\/vulnerabilities.json\",\"apiKey\":\"piB3iRLl2k8IogTR2NRDoOx33mQGx50ayFIl\",\"restrictControlPanelIpAddresses\":\"\",\"restrictFrontEndIpAddresses\":\"\"}','2016-06-14 13:25:58','2016-06-14 13:25:58','2016-09-12 15:02:47','e3045bc0-e5fb-4b24-be4b-2d8b19d0306f');
+INSERT INTO `craft_plugins` VALUES (1,'Directory','1.0.12',NULL,NULL,'unknown',1,NULL,'2014-10-08 10:52:21','2014-10-08 10:52:21','2014-10-08 10:52:21','aba3661c-99d2-4d34-9788-30e05197134f'),(3,'ObsoleteRedirect','0.1.0',NULL,NULL,'unknown',1,NULL,'2015-05-14 10:49:46','2015-05-14 10:49:46','2017-07-19 10:14:35','94eaed70-d03e-430c-be1f-18f0a30612d4'),(5,'AssetRev','3.0.0',NULL,NULL,'unknown',1,'{\"manifestPath\":\"..\\/cachebust.json\"}','2015-06-16 14:53:46','2015-06-16 14:53:46','2017-07-19 10:14:35','5c6c2959-e9ef-49b3-b92b-8529b4157f0d'),(6,'Guano','0.2',NULL,NULL,'unknown',1,NULL,'2015-10-08 11:08:49','2015-10-08 11:08:49','2017-07-19 10:14:35','feba2548-9685-4cfb-ad7a-d1e4776bb9cc'),(8,'ImageResizer','0.1.4','1.0.0',NULL,'unknown',1,'{\"enabled\":\"1\",\"imageWidth\":\"2048\",\"imageHeight\":\"2048\",\"imageQuality\":\"100\",\"assetSources\":\"*\"}','2015-10-23 10:00:34','2015-10-23 10:00:34','2017-07-19 10:14:35','4c10ef35-fcc0-4f06-9d43-c6d14622a053'),(9,'SuperTable','1.0.1','1.0.0',NULL,'unknown',1,NULL,'2015-10-23 15:33:34','2015-10-23 15:33:34','2017-07-19 10:14:35','f99b9499-b2b3-4189-9f1d-c4554def3374'),(11,'EntryTitleEditable','1.0',NULL,NULL,'unknown',1,NULL,'2015-10-23 16:17:02','2015-10-23 16:17:02','2016-01-19 15:50:10','07dc8a59-da92-47cc-9f30-759d07e05ac3'),(12,'LabelEnvironment','0.1.0',NULL,NULL,'unknown',1,'{\"colorMappings\":{\"development\":\"#000000\",\"staging\":\"#0000ff\",\"preview\":\"#ff0000\",\"production\":\"#16c68e\"},\"prefix\":\"\",\"suffix\":\"\"}','2015-10-25 11:35:32','2015-10-25 11:35:32','2017-07-19 10:14:35','7b4fe278-6804-4f70-b0bf-e61c7fdf6d2c'),(14,'CodeBlock','1.1.0','1.1.0',NULL,'unknown',1,NULL,'2015-10-25 11:55:47','2015-10-25 11:55:47','2017-07-19 10:14:35','e579c636-a1a0-4788-ae1a-f0b3630abe22'),(16,'CpNav','1.7.5','1.1.0',NULL,'unknown',1,'{\"showQuickAddMenu\":\"\"}','2015-10-25 12:33:15','2015-10-25 12:33:15','2017-07-19 10:14:35','0b042902-349c-41ef-98d8-bb2a31b445cd'),(17,'Imager','1.2.1','1.0.0',NULL,'unknown',1,NULL,'2015-10-30 15:57:14','2015-10-30 15:57:14','2017-07-19 10:14:35','b0c87aa0-53d6-4420-a297-2211da547370'),(19,'CpFieldLinks','1.2','1.0',NULL,'unknown',1,NULL,'2015-11-13 09:56:41','2015-11-13 09:56:41','2017-07-19 10:14:35','d5fd8f41-473d-42e9-9145-bf64eea6d7f3'),(20,'Reasons','1.0.6','1.1',NULL,'unknown',1,NULL,'2015-11-13 10:49:20','2015-11-13 10:49:20','2017-07-19 10:14:35','208a9b9d-dc2c-48a3-92f5-7e6da66d905a'),(21,'Introvert','0.2',NULL,NULL,'unknown',1,NULL,'2015-11-20 09:36:39','2015-11-20 09:36:39','2017-07-19 10:14:35','7a51354f-a639-4f84-af29-0ee5efe87465'),(22,'QuickField','0.3.3','1.0.0',NULL,'unknown',1,NULL,'2015-12-08 09:34:10','2015-12-08 09:34:10','2017-07-19 10:14:35','e8aac0ec-e200-4781-aacb-465aa765abb4'),(24,'FocalPointField','1.0.1',NULL,NULL,'unknown',1,NULL,'2016-01-19 15:57:13','2016-01-19 15:57:13','2017-07-19 10:14:35','623245d2-1fe2-4cbb-b4d6-405c5667e449'),(25,'Seomatic','1.1.33','1.1.21',NULL,'unknown',1,NULL,'2016-01-19 16:04:43','2016-01-19 16:04:43','2017-07-19 10:14:35','8f159c1e-3a2a-4b08-adc7-1cac6fb79747'),(26,'Sitemap','v1.0.0-alpha.4',NULL,NULL,'unknown',1,NULL,'2016-01-19 16:13:28','2016-01-19 16:13:28','2017-07-19 10:14:35','273cbb5c-e494-4e7b-aabd-464c3e5fb078'),(29,'Relabel','0.1.3','1.0.0',NULL,'unknown',1,NULL,'2016-01-19 16:57:21','2016-01-19 16:57:21','2017-07-19 10:14:35','5294ce3b-08d7-4bd3-8e2f-6ff84c6cb5ca'),(34,'FieldManager','1.5.2','1.0.0',NULL,'unknown',1,NULL,'2016-02-26 16:27:16','2016-02-26 16:27:16','2017-07-19 10:14:35','14719c25-9270-4b40-9b27-87269de01425'),(35,'Inlin','1.1',NULL,NULL,'unknown',1,NULL,'2016-04-12 14:46:20','2016-04-12 14:46:20','2017-07-19 10:14:35','dc6d6c60-82fe-4d66-bf61-d6c6fad7a3d8'),(36,'CacheMonster','1.0.0',NULL,NULL,'unknown',1,NULL,'2016-05-12 08:10:23','2016-05-12 08:10:23','2017-07-19 10:14:35','7161f3cd-99a8-4e20-87a2-e4bb3267bf01'),(40,'Sherlock','1.1.0','1.0.0',NULL,'unknown',1,'{\"liveMode\":\"\",\"highSecurityLevel\":\"1\",\"logAllEvents\":\"1\",\"headerProtection\":\"1\",\"notificationEmailAddresses\":\"dev@mustasj.no\",\"pluginVulnerabilitiesFeedUrl\":\"https:\\/\\/raw.githubusercontent.com\\/putyourlightson\\/craft-plugin-vulnerabilities\\/master\\/vulnerabilities.json\",\"apiKey\":\"piB3iRLl2k8IogTR2NRDoOx33mQGx50ayFIl\",\"restrictControlPanelIpAddresses\":\"\",\"restrictFrontEndIpAddresses\":\"\"}','2016-06-14 13:25:58','2016-06-14 13:25:58','2017-07-19 10:14:35','e3045bc0-e5fb-4b24-be4b-2d8b19d0306f');
 /*!40000 ALTER TABLE `craft_plugins` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -1320,7 +1324,7 @@ CREATE TABLE `craft_relations` (
   CONSTRAINT `craft_relations_sourceId_fk` FOREIGN KEY (`sourceId`) REFERENCES `craft_elements` (`id`) ON DELETE CASCADE,
   CONSTRAINT `craft_relations_sourceLocale_fk` FOREIGN KEY (`sourceLocale`) REFERENCES `craft_locales` (`locale`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `craft_relations_targetId_fk` FOREIGN KEY (`targetId`) REFERENCES `craft_elements` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1330,6 +1334,7 @@ CREATE TABLE `craft_relations` (
 LOCK TABLES `craft_relations` WRITE;
 /*!40000 ALTER TABLE `craft_relations` DISABLE KEYS */;
 SET autocommit=0;
+INSERT INTO `craft_relations` VALUES (2,23,7,NULL,19,1,'2017-07-19 11:01:56','2017-07-19 11:01:56','34f046f1-f210-45d8-afe4-ca82b4187803'),(3,22,7,NULL,17,1,'2017-07-19 11:01:56','2017-07-19 11:01:56','845cb331-c6ab-4343-a83f-20759db116d5'),(10,23,6,NULL,20,1,'2017-07-19 11:03:20','2017-07-19 11:03:20','b6fe74f6-3fe2-4c67-93fd-57199f229c68'),(11,22,6,NULL,15,1,'2017-07-19 11:03:20','2017-07-19 11:03:20','822c991a-e42a-4eff-a4ac-19efec78ba60'),(12,23,8,NULL,19,1,'2017-07-19 11:03:38','2017-07-19 11:03:38','5b547a51-3389-4380-839b-8a9510b24516'),(13,22,8,NULL,18,1,'2017-07-19 11:03:38','2017-07-19 11:03:38','19f5c936-6aed-4f10-91df-4b5b48cfe669'),(14,24,5,NULL,8,1,'2017-07-19 11:35:06','2017-07-19 11:35:06','90a08372-93d1-4487-89b1-315940f705b2'),(15,24,5,NULL,6,2,'2017-07-19 11:35:06','2017-07-19 11:35:06','950f3e86-04a1-460f-843b-9a9338c39c46'),(16,24,5,NULL,7,3,'2017-07-19 11:35:06','2017-07-19 11:35:06','d0faeadf-b660-4783-aeed-c5effa4797ef');
 /*!40000 ALTER TABLE `craft_relations` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -1392,7 +1397,7 @@ CREATE TABLE `craft_searchindex` (
 LOCK TABLES `craft_searchindex` WRITE;
 /*!40000 ALTER TABLE `craft_searchindex` DISABLE KEYS */;
 SET autocommit=0;
-INSERT INTO `craft_searchindex` VALUES (4,'slug',0,'nb_no',''),(4,'field',6,'nb_no',''),(1,'username',0,'nb_no',' mustasj '),(1,'firstname',0,'nb_no',''),(1,'lastname',0,'nb_no',''),(1,'fullname',0,'nb_no',''),(1,'email',0,'nb_no',' dev mustasj no '),(1,'slug',0,'nb_no','');
+INSERT INTO `craft_searchindex` VALUES (4,'slug',0,'nb_no',''),(4,'field',6,'nb_no',''),(1,'username',0,'nb_no',' mustasj '),(1,'firstname',0,'nb_no',''),(1,'lastname',0,'nb_no',''),(1,'fullname',0,'nb_no',''),(1,'email',0,'nb_no',' dev mustasj no '),(1,'slug',0,'nb_no',''),(5,'slug',0,'nb_no',' forside '),(5,'title',0,'nb_no',' forside '),(6,'slug',0,'nb_no',' sirkus shopping '),(6,'title',0,'nb_no',' sirkus shopping '),(7,'slug',0,'nb_no',' st hanshaugen '),(7,'title',0,'nb_no',' st hanshaugen '),(8,'slug',0,'nb_no',' foodtruck '),(8,'title',0,'nb_no',' foodtruck '),(19,'field',21,'nb_no',''),(19,'field',17,'nb_no',''),(19,'field',18,'nb_no',''),(19,'filename',0,'nb_no',' logo_foodtruck svg '),(19,'extension',0,'nb_no',' svg '),(18,'title',0,'nb_no',' meny foodtruck '),(18,'kind',0,'nb_no',' image '),(18,'slug',0,'nb_no',' meny foodtruck '),(18,'extension',0,'nb_no',' svg '),(18,'filename',0,'nb_no',' meny foodtruck svg '),(18,'field',17,'nb_no',''),(18,'field',18,'nb_no',''),(7,'field',22,'nb_no',' meny st hagen ferdig '),(18,'field',21,'nb_no',''),(17,'title',0,'nb_no',' meny st hagen ferdig '),(17,'slug',0,'nb_no',' meny st hagen ferdig '),(17,'extension',0,'nb_no',' svg '),(17,'kind',0,'nb_no',' image '),(17,'filename',0,'nb_no',' meny st hagen_ferdig svg '),(17,'field',18,'nb_no',''),(17,'field',21,'nb_no',''),(17,'field',17,'nb_no',''),(15,'field',21,'nb_no',''),(15,'field',17,'nb_no',''),(15,'field',18,'nb_no',''),(15,'filename',0,'nb_no',' meny sirkus svg '),(15,'extension',0,'nb_no',' svg '),(15,'kind',0,'nb_no',' image '),(15,'slug',0,'nb_no',' meny sirkus '),(15,'title',0,'nb_no',' meny sirkus '),(6,'field',23,'nb_no',' logo sandwichbar '),(8,'field',22,'nb_no',' meny foodtruck '),(8,'field',23,'nb_no',' logo foodtruck '),(7,'field',23,'nb_no',' logo foodtruck '),(19,'kind',0,'nb_no',' image '),(19,'slug',0,'nb_no',' logo foodtruck '),(19,'title',0,'nb_no',' logo foodtruck '),(20,'field',21,'nb_no',''),(20,'field',17,'nb_no',''),(20,'field',18,'nb_no',''),(20,'filename',0,'nb_no',' logo_sandwichbar svg '),(20,'extension',0,'nb_no',' svg '),(20,'kind',0,'nb_no',' image '),(20,'slug',0,'nb_no',' logo sandwichbar '),(20,'title',0,'nb_no',' logo sandwichbar '),(6,'field',22,'nb_no',' meny sirkus '),(5,'field',24,'nb_no',' foodtruck sirkus shopping st hanshaugen ');
 /*!40000 ALTER TABLE `craft_searchindex` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -1420,7 +1425,7 @@ CREATE TABLE `craft_sections` (
   UNIQUE KEY `craft_sections_handle_unq_idx` (`handle`),
   KEY `craft_sections_structureId_fk` (`structureId`),
   CONSTRAINT `craft_sections_structureId_fk` FOREIGN KEY (`structureId`) REFERENCES `craft_structures` (`id`) ON DELETE SET NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1430,6 +1435,7 @@ CREATE TABLE `craft_sections` (
 LOCK TABLES `craft_sections` WRITE;
 /*!40000 ALTER TABLE `craft_sections` DISABLE KEYS */;
 SET autocommit=0;
+INSERT INTO `craft_sections` VALUES (1,NULL,'Forside','forside','single',1,'index',1,'2017-07-06 17:46:15','2017-07-06 17:46:15','b3b80ece-0e30-46f4-8c2c-ba89d9547841'),(2,NULL,'Avdelinger','avdelinger','channel',1,'avdelinger/_entry',1,'2017-07-06 17:47:19','2017-07-06 17:47:19','0cbb1ea0-bc00-48af-a0d9-4f64966f9f32');
 /*!40000 ALTER TABLE `craft_sections` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -1455,7 +1461,7 @@ CREATE TABLE `craft_sections_i18n` (
   KEY `craft_sections_i18n_locale_fk` (`locale`),
   CONSTRAINT `craft_sections_i18n_locale_fk` FOREIGN KEY (`locale`) REFERENCES `craft_locales` (`locale`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `craft_sections_i18n_sectionId_fk` FOREIGN KEY (`sectionId`) REFERENCES `craft_sections` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1465,6 +1471,7 @@ CREATE TABLE `craft_sections_i18n` (
 LOCK TABLES `craft_sections_i18n` WRITE;
 /*!40000 ALTER TABLE `craft_sections_i18n` DISABLE KEYS */;
 SET autocommit=0;
+INSERT INTO `craft_sections_i18n` VALUES (1,1,'nb_no',1,'__home__',NULL,'2017-07-06 17:46:15','2017-07-06 17:46:15','5b9ea25e-8ba9-49ce-b5e3-b57334636553'),(2,2,'nb_no',1,'avdelinger/{slug}',NULL,'2017-07-06 17:47:19','2017-07-06 17:47:19','585842bc-20b7-443e-929e-57db6b3f91c4');
 /*!40000 ALTER TABLE `craft_sections_i18n` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -1664,7 +1671,7 @@ CREATE TABLE `craft_sessions` (
   KEY `craft_sessions_dateUpdated_idx` (`dateUpdated`),
   KEY `craft_sessions_userId_fk` (`userId`),
   CONSTRAINT `craft_sessions_userId_fk` FOREIGN KEY (`userId`) REFERENCES `craft_users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1674,7 +1681,7 @@ CREATE TABLE `craft_sessions` (
 LOCK TABLES `craft_sessions` WRITE;
 /*!40000 ALTER TABLE `craft_sessions` DISABLE KEYS */;
 SET autocommit=0;
-INSERT INTO `craft_sessions` VALUES (53,1,'4893bef3c369df586e564b24061bf61b7cc38aa3czozMjoibldQaHBhdzVGMlFtYzdBWmVwVFRLUHhfaG5ZcmZ+MG4iOw==','2016-03-14 09:36:21','2016-03-14 09:36:21','5969dd47-805e-446c-a8f2-1b9864f85784'),(54,1,'36017137ebdc38be935a53fa9f3ede3bd3134846czozMjoiWkVkZWNGOUl4WXp3dG52RUdTbFNKd19vbk5ZRmZyanIiOw==','2016-03-15 14:27:23','2016-03-15 14:27:23','e975b2e2-d4c0-4248-a5df-440f68a0cde1'),(55,1,'82b5a4d5a78de76d120ef24a0121ade326160d14czozMjoiaWhjM05KZnpIX1B6S2NGSjRRbUtHSmw4aVNLVU1oQXEiOw==','2016-03-18 09:50:35','2016-03-18 09:50:35','56089d91-4731-4e3f-b205-eecacf2f0ba6'),(56,1,'35c2fa56be21797c9fdcf9ad36ab1112a0bfaf3bczozMjoiZUE3eFVGV2lfUmREV2NPdlFmUW1UYmNoSVBHemRUVlciOw==','2016-03-23 14:49:15','2016-03-23 14:49:15','d9125f70-1082-472e-98fd-e4be3c4b2be3'),(57,1,'4af3f2d2885e60b54cdcf06f2260fe9b9ed842f5czozMjoifmg1OWE0bjZvdDhoalJxNllWMjloUWdLTHNrcHZQV2wiOw==','2016-04-11 13:26:42','2016-04-11 13:26:42','bad8b6cb-52cb-4468-9980-a412255bd198'),(58,1,'2bebeae4bc62cc32e9438359bba2721227c42fcbczozMjoibmNWQjh1bkhVdUF6d3o3d185MkppNzJsbHBmbHVma1AiOw==','2016-04-12 14:45:38','2016-04-12 14:45:38','0028cafe-b363-4302-803b-96a1217579c2'),(59,1,'93982bf48378d278e89c5181578c1ef1b291b199czozMjoiOGVTRVBwSnJGTTRBWnZmdXpfSlRqRnFpOTJDYU5qUVUiOw==','2016-04-20 17:24:44','2016-04-20 17:24:44','cf15adf5-a2c8-4ed0-bda3-467ab4679182'),(60,1,'08e530b0f90255576b2cfa6dab822e7eeb722b18czozMjoiMUlid1NzVHVTdmtfMlA0SExZdklrQ3BHZGVsaHhrUE8iOw==','2016-04-26 11:07:10','2016-04-26 11:07:10','8953fec6-ce13-46ea-b188-29acf0daebb5'),(61,1,'c467fa26071f9348c29cab0fda4fb4d99e84dad3czozMjoiRjgxeE10SmVKc0IwSnoxajNSZHdzdGZ6QUVoMzZDT1oiOw==','2016-04-27 16:17:45','2016-04-27 16:17:45','f1aa051d-f85f-497e-9ab5-ad9ae6a1f9d3'),(62,1,'180823852cc582bfc4f803ab3e0cd7d796ba1be6czozMjoidXY4VlpWNDA1cXFIaFV3WTBFZmdDZn55VHVqbVJ2dXYiOw==','2016-04-29 15:12:50','2016-04-29 15:12:50','28ec656e-466c-4f19-b0e0-4af8493a2719'),(63,1,'475d52a0118759839fb87e90bbde9e8db443bdb0czozMjoiWkx3ZUo2TkJwTXVrck9hWU5iaXRiZVBRa2lIQ3gxcXkiOw==','2016-05-03 09:06:40','2016-05-03 09:06:40','80db662e-d0a0-41d3-80b4-3be2e629d90e'),(64,1,'02dd0c6652e90e0ea0b75778c3c28df0acd68c1cczozMjoiVFY3a09DXzNzMFFJUnFwRkRDbnEwa1lJckhDTFdnSngiOw==','2016-05-06 13:23:12','2016-05-06 13:23:12','fc38a153-0e41-476a-aa77-70f9c6855c7e'),(65,1,'6175a888ee253077c2d3e32afb232125088fe36dczozMjoiR0pkOEpsWkFNMXU2dlRqZVRUWGtCYWV0VDFzYjBnUzQiOw==','2016-05-09 10:56:50','2016-05-09 10:56:50','09a2e14d-6bd7-4c46-b45d-c52a9d6870d9'),(66,1,'81efffa26cf4259896a52d69b508bdee1d185042czozMjoiaVc0aXViM0NWWmtBN1pGdG5MbmRvVX5LbmlVTFNJUm8iOw==','2016-05-12 07:37:44','2016-05-12 07:37:44','f0471e5f-1389-4955-9056-ecb67a7d0de6'),(67,1,'495b9d0d119e5c1f8a4bb0f4e369cfd02b737939czozMjoiaXo0amZQR2VYQ34wUlFCfk12bTZYY3ltN1llekZrSDIiOw==','2016-05-13 14:52:00','2016-05-13 14:52:00','7a3b86d8-289a-4898-a33d-a066761ebc23'),(68,1,'ad8bbcc960a2a15e3f25b4adc85eb3fce43f0828czozMjoiZTdSeGdMWmdYVUhrVGFBWmo2aGVEU0ZWdGhBa2FnUGIiOw==','2016-05-20 08:58:11','2016-05-20 08:58:11','2cf41f3c-82d3-448c-889e-c5a40ee09f93'),(71,1,'d5a55979383a4f50847655aae1aa4e90e7a05213czozMjoia1NQfjFQT25qUzM2TzJrOTVNZW9Wa1dENU9GYXNmSHkiOw==','2016-05-25 09:56:09','2016-05-25 09:56:09','17a43c6b-fc7f-4e65-9cfd-1aa5d0823b63'),(72,1,'a29e5c409c332e141eaf74bf3dffcccf72b06764czozMjoiaTlkZGhhc3dEQU9rOHZPcGJzSTkwM0dMenFiX2ZVUlUiOw==','2016-06-03 08:20:18','2016-06-03 08:20:18','0345ad3b-b82f-4546-b01a-9df6621e0a3d'),(73,1,'44388df253fdec281d239483bd584da847fd6d5fczozMjoiRl92M1BmSUh4WWNHbHZLM0t+RUhhM3lySFJ5M1FkOEciOw==','2016-06-08 07:59:47','2016-06-08 12:34:48','75a63239-7e89-4af4-9205-3272e11b2499'),(74,1,'e09831dc4e4ac2c7ef0028b5c7c9d7234b0d9af6czozMjoiUHBHUHdZQnpoVGMwT0pMMGo0a1I4STdYeUR4RF83UF8iOw==','2016-06-10 07:36:42','2016-06-10 07:36:42','d0e01652-f6cd-4f1b-b441-cbaf73e8192d'),(75,1,'fa6c243428f428172a04a38fdaca340a188a29eeczozMjoib05wWUxKfmdaelFrT35uWXdzcEZiaTl6QjJuSkVod18iOw==','2016-06-14 07:14:28','2016-06-14 07:14:28','21259194-1de9-43c3-b722-52ef29a58fa3'),(76,1,'be201ca9d7234b1aac7d91ca449418b0b3899692czozMjoiaG42NVN+NUhFT1BjeWFXM2REUkZjUGdkQlRTVTZyZ3oiOw==','2016-08-01 10:07:11','2016-08-01 10:07:11','22bb5781-502a-4c7c-befc-685b653b5ddf'),(77,1,'cf642d761c968d67f6b3e37a695691796d321aa0czozMjoiVHpDQ3BEUk9ldjVqNExNaH50fmVxWVVYY3FYQkJuUm8iOw==','2016-08-01 10:41:26','2016-08-01 10:41:26','260f8739-4f1a-4f82-8fd1-9bb783074a98'),(78,1,'da8391b9922675b8a056bb11d464dc83ab7ae16cczozMjoiYTBNa0VLMk5OV0lzYUtiaFZNT25mRFZ2bkdFR0ExSFciOw==','2016-08-17 11:54:42','2016-08-17 11:54:42','467f3d6e-bc2e-439e-96f4-431f77b6bdca'),(79,1,'c21ca23d358e85776cbb0be4354fb5cc604cfd9bczozMjoienJZQlVxTkEzNEUwMjVXTX40eG8wVXRtaFM4RFVxb3UiOw==','2016-09-12 15:02:41','2016-09-12 15:02:41','c5200da8-dd43-4005-aaf6-eb168700a239');
+INSERT INTO `craft_sessions` VALUES (53,1,'4893bef3c369df586e564b24061bf61b7cc38aa3czozMjoibldQaHBhdzVGMlFtYzdBWmVwVFRLUHhfaG5ZcmZ+MG4iOw==','2016-03-14 09:36:21','2016-03-14 09:36:21','5969dd47-805e-446c-a8f2-1b9864f85784'),(54,1,'36017137ebdc38be935a53fa9f3ede3bd3134846czozMjoiWkVkZWNGOUl4WXp3dG52RUdTbFNKd19vbk5ZRmZyanIiOw==','2016-03-15 14:27:23','2016-03-15 14:27:23','e975b2e2-d4c0-4248-a5df-440f68a0cde1'),(55,1,'82b5a4d5a78de76d120ef24a0121ade326160d14czozMjoiaWhjM05KZnpIX1B6S2NGSjRRbUtHSmw4aVNLVU1oQXEiOw==','2016-03-18 09:50:35','2016-03-18 09:50:35','56089d91-4731-4e3f-b205-eecacf2f0ba6'),(56,1,'35c2fa56be21797c9fdcf9ad36ab1112a0bfaf3bczozMjoiZUE3eFVGV2lfUmREV2NPdlFmUW1UYmNoSVBHemRUVlciOw==','2016-03-23 14:49:15','2016-03-23 14:49:15','d9125f70-1082-472e-98fd-e4be3c4b2be3'),(57,1,'4af3f2d2885e60b54cdcf06f2260fe9b9ed842f5czozMjoifmg1OWE0bjZvdDhoalJxNllWMjloUWdLTHNrcHZQV2wiOw==','2016-04-11 13:26:42','2016-04-11 13:26:42','bad8b6cb-52cb-4468-9980-a412255bd198'),(58,1,'2bebeae4bc62cc32e9438359bba2721227c42fcbczozMjoibmNWQjh1bkhVdUF6d3o3d185MkppNzJsbHBmbHVma1AiOw==','2016-04-12 14:45:38','2016-04-12 14:45:38','0028cafe-b363-4302-803b-96a1217579c2'),(59,1,'93982bf48378d278e89c5181578c1ef1b291b199czozMjoiOGVTRVBwSnJGTTRBWnZmdXpfSlRqRnFpOTJDYU5qUVUiOw==','2016-04-20 17:24:44','2016-04-20 17:24:44','cf15adf5-a2c8-4ed0-bda3-467ab4679182'),(60,1,'08e530b0f90255576b2cfa6dab822e7eeb722b18czozMjoiMUlid1NzVHVTdmtfMlA0SExZdklrQ3BHZGVsaHhrUE8iOw==','2016-04-26 11:07:10','2016-04-26 11:07:10','8953fec6-ce13-46ea-b188-29acf0daebb5'),(61,1,'c467fa26071f9348c29cab0fda4fb4d99e84dad3czozMjoiRjgxeE10SmVKc0IwSnoxajNSZHdzdGZ6QUVoMzZDT1oiOw==','2016-04-27 16:17:45','2016-04-27 16:17:45','f1aa051d-f85f-497e-9ab5-ad9ae6a1f9d3'),(62,1,'180823852cc582bfc4f803ab3e0cd7d796ba1be6czozMjoidXY4VlpWNDA1cXFIaFV3WTBFZmdDZn55VHVqbVJ2dXYiOw==','2016-04-29 15:12:50','2016-04-29 15:12:50','28ec656e-466c-4f19-b0e0-4af8493a2719'),(63,1,'475d52a0118759839fb87e90bbde9e8db443bdb0czozMjoiWkx3ZUo2TkJwTXVrck9hWU5iaXRiZVBRa2lIQ3gxcXkiOw==','2016-05-03 09:06:40','2016-05-03 09:06:40','80db662e-d0a0-41d3-80b4-3be2e629d90e'),(64,1,'02dd0c6652e90e0ea0b75778c3c28df0acd68c1cczozMjoiVFY3a09DXzNzMFFJUnFwRkRDbnEwa1lJckhDTFdnSngiOw==','2016-05-06 13:23:12','2016-05-06 13:23:12','fc38a153-0e41-476a-aa77-70f9c6855c7e'),(65,1,'6175a888ee253077c2d3e32afb232125088fe36dczozMjoiR0pkOEpsWkFNMXU2dlRqZVRUWGtCYWV0VDFzYjBnUzQiOw==','2016-05-09 10:56:50','2016-05-09 10:56:50','09a2e14d-6bd7-4c46-b45d-c52a9d6870d9'),(66,1,'81efffa26cf4259896a52d69b508bdee1d185042czozMjoiaVc0aXViM0NWWmtBN1pGdG5MbmRvVX5LbmlVTFNJUm8iOw==','2016-05-12 07:37:44','2016-05-12 07:37:44','f0471e5f-1389-4955-9056-ecb67a7d0de6'),(67,1,'495b9d0d119e5c1f8a4bb0f4e369cfd02b737939czozMjoiaXo0amZQR2VYQ34wUlFCfk12bTZYY3ltN1llekZrSDIiOw==','2016-05-13 14:52:00','2016-05-13 14:52:00','7a3b86d8-289a-4898-a33d-a066761ebc23'),(68,1,'ad8bbcc960a2a15e3f25b4adc85eb3fce43f0828czozMjoiZTdSeGdMWmdYVUhrVGFBWmo2aGVEU0ZWdGhBa2FnUGIiOw==','2016-05-20 08:58:11','2016-05-20 08:58:11','2cf41f3c-82d3-448c-889e-c5a40ee09f93'),(71,1,'d5a55979383a4f50847655aae1aa4e90e7a05213czozMjoia1NQfjFQT25qUzM2TzJrOTVNZW9Wa1dENU9GYXNmSHkiOw==','2016-05-25 09:56:09','2016-05-25 09:56:09','17a43c6b-fc7f-4e65-9cfd-1aa5d0823b63'),(72,1,'a29e5c409c332e141eaf74bf3dffcccf72b06764czozMjoiaTlkZGhhc3dEQU9rOHZPcGJzSTkwM0dMenFiX2ZVUlUiOw==','2016-06-03 08:20:18','2016-06-03 08:20:18','0345ad3b-b82f-4546-b01a-9df6621e0a3d'),(73,1,'44388df253fdec281d239483bd584da847fd6d5fczozMjoiRl92M1BmSUh4WWNHbHZLM0t+RUhhM3lySFJ5M1FkOEciOw==','2016-06-08 07:59:47','2016-06-08 12:34:48','75a63239-7e89-4af4-9205-3272e11b2499'),(74,1,'e09831dc4e4ac2c7ef0028b5c7c9d7234b0d9af6czozMjoiUHBHUHdZQnpoVGMwT0pMMGo0a1I4STdYeUR4RF83UF8iOw==','2016-06-10 07:36:42','2016-06-10 07:36:42','d0e01652-f6cd-4f1b-b441-cbaf73e8192d'),(75,1,'fa6c243428f428172a04a38fdaca340a188a29eeczozMjoib05wWUxKfmdaelFrT35uWXdzcEZiaTl6QjJuSkVod18iOw==','2016-06-14 07:14:28','2016-06-14 07:14:28','21259194-1de9-43c3-b722-52ef29a58fa3'),(76,1,'be201ca9d7234b1aac7d91ca449418b0b3899692czozMjoiaG42NVN+NUhFT1BjeWFXM2REUkZjUGdkQlRTVTZyZ3oiOw==','2016-08-01 10:07:11','2016-08-01 10:07:11','22bb5781-502a-4c7c-befc-685b653b5ddf'),(77,1,'cf642d761c968d67f6b3e37a695691796d321aa0czozMjoiVHpDQ3BEUk9ldjVqNExNaH50fmVxWVVYY3FYQkJuUm8iOw==','2016-08-01 10:41:26','2016-08-01 10:41:26','260f8739-4f1a-4f82-8fd1-9bb783074a98'),(78,1,'da8391b9922675b8a056bb11d464dc83ab7ae16cczozMjoiYTBNa0VLMk5OV0lzYUtiaFZNT25mRFZ2bkdFR0ExSFciOw==','2016-08-17 11:54:42','2016-08-17 11:54:42','467f3d6e-bc2e-439e-96f4-431f77b6bdca'),(79,1,'c21ca23d358e85776cbb0be4354fb5cc604cfd9bczozMjoienJZQlVxTkEzNEUwMjVXTX40eG8wVXRtaFM4RFVxb3UiOw==','2016-09-12 15:02:41','2016-09-12 15:02:41','c5200da8-dd43-4005-aaf6-eb168700a239'),(80,1,'ab847d69c09fa8c233cbd7b2c4e372b07b6ae34dczozMjoiQ2hXan53fnY3RWthcDN2OFhpNzJWVzMzc2F1R34xRlYiOw==','2017-07-06 17:44:09','2017-07-06 17:44:09','19eb6cd2-74aa-41fc-8b82-f9e73fe511e0'),(81,1,'cb90eceab7714f8faf7476e96a50f521e6ab0900czozMjoiMHdMeThZekNMOVVBWTZvUGRmMTY3YUxXVkl+TDR6Y2UiOw==','2017-07-19 10:14:26','2017-07-19 10:14:26','4706364b-34f6-43a3-af93-729fb54f71dc');
 /*!40000 ALTER TABLE `craft_sessions` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -2037,7 +2044,7 @@ CREATE TABLE `craft_tasks` (
   KEY `craft_tasks_lft_idx` (`lft`),
   KEY `craft_tasks_rgt_idx` (`rgt`),
   KEY `craft_tasks_level_idx` (`level`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2377,7 +2384,7 @@ CREATE TABLE `craft_users` (
 LOCK TABLES `craft_users` WRITE;
 /*!40000 ALTER TABLE `craft_users` DISABLE KEYS */;
 SET autocommit=0;
-INSERT INTO `craft_users` VALUES (1,'mustasj',NULL,'','','dev@mustasj.no','$2a$13$ueUykLaKp5jkSmJiy2E8D.kZ11QHma2O3O4mUODIkLt1e5w5OVG4W',NULL,1,1,0,0,0,0,0,'2016-09-12 15:02:41','127.0.0.1',NULL,NULL,'2016-02-15 11:45:20',NULL,NULL,NULL,NULL,0,'2014-10-08 10:49:48','2014-10-08 10:49:48','2016-09-12 15:02:41','1381d236-993f-4cd9-81bf-e97ced9e7789');
+INSERT INTO `craft_users` VALUES (1,'mustasj',NULL,'','','dev@mustasj.no','$2a$13$ueUykLaKp5jkSmJiy2E8D.kZ11QHma2O3O4mUODIkLt1e5w5OVG4W',NULL,1,1,0,0,0,0,0,'2017-07-19 10:14:26','127.0.0.1',NULL,NULL,'2016-02-15 11:45:20',NULL,NULL,NULL,NULL,0,'2014-10-08 10:49:48','2014-10-08 10:49:48','2017-07-19 10:14:26','1381d236-993f-4cd9-81bf-e97ced9e7789');
 /*!40000 ALTER TABLE `craft_users` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -2426,4 +2433,4 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on: Mon, 12 Sep 2016 17:17:29 +0000
+-- Dump completed on: Wed, 19 Jul 2017 11:38:28 +0000

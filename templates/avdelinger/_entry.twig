@@ -1,19 +1,24 @@
 {% extends "_layout" %}
-{% set bodyClass = "index" %}
+{% set bodyClass = "avdelinger" %}
 
 {% block content %}
 
+	{% set svgmeny = entry.meny.first() %}
 
 	<section>
 		<div id="logo">
-			{{ craft.inlin.er('/static/svg/symbols/logo_sandwichbar.svg') | raw }}
+			{{ craft.inlin.er(entry.logo.first().url, true) | raw }}
 		</div>
 
-		<article class="avdelinger">
-			{% for avdeling in entry.avdelinger %}
-				<a href="{{avdeling.url}}">{{avdeling.title}}</a>
-			{% endfor %}
-		</article>
+
+		<h1>{{entry.title}}</h1>
+
+
+		<div id="meny">
+			<div class="meny1">
+				{{ craft.inlin.er(entry.meny.first().url, true) | raw }}
+			</div>
+		</div>
 
 		<a href="tel:90205094">Tlf Sirkus shopping: 90 20 50 94</a></br>
 		<a href="tel:45066649">Tlf Foodtruck: 450 66 649</a></br>

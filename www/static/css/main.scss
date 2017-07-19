@@ -2,13 +2,22 @@
 @import "_inc/variables";
 @import "_inc/boilerplate";
 
-.index {
+.index, .avdelinger {
 
   > section {
     margin-bottom: 50px;
   }
 
   text-align: center;
+
+  .avdelinger {
+    margin-bottom: 6em;
+    a {
+      display: block;
+      font-size: $h2;
+      text-transform: uppercase;
+    }
+  }
 
   #logo {
     text-align: center;
@@ -17,7 +26,7 @@
 
     @media #{$desktop} {
       margin-top: 150px;
-      margin-bottom: 120px;
+      margin-bottom: 70px;
   	}
 
     svg {
@@ -29,6 +38,12 @@
     		width: 460px;
     	}
     }
+  }
+
+  h1 {
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-weight: normal;
   }
 
   h2 {

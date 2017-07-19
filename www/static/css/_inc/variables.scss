@@ -20,7 +20,7 @@ $ease-in: cubic-bezier(.4, 0, 1, 1);
 /* COLOR PALETTE */
 /*-------------*/
 
-$color_pr1: #0f0f0f; // Svart
+$color_pr1: #13110C; // Svart
 $color_pr2: #FFFFFF; // Hvit
 $color_pr3: #ebebeb; // Lys grå
 $color_sec1: #f1372a; // Lysegul
@@ -67,7 +67,7 @@ select,
 textarea { font-family: $font_default; }
 
 body {
-    background: #000;
+    background: $color_pr1;
     color: #FFF;
     font-size: $h5;
 
